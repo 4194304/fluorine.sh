@@ -26,7 +26,7 @@ html,body{
 .wrapper .images .img-1{
   height: 100%;
   width: 100%;
-  background: url("images/img.jpg") no-repeat;
+  background: url("images/image1.png") no-repeat;
   /* background: url("images/car.jpg") no-repeat; */
 }
 .wrapper .images .img-2{
@@ -34,7 +34,7 @@ html,body{
   height: 100%;
   width: 50%;
   /* filter: blur(5px); */
-  background: url("images/img.png") no-repeat;
+  background: url("images/image2.png") no-repeat;
   /* background: url("images/car.png") no-repeat; */
 }
 .wrapper .slider{
