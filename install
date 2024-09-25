@@ -6,7 +6,7 @@ read -p "Do you want to continue [y/n]: " prompt
 if [[ $prompt == y* ]]; then
 	cd ~
 	clear
-	sudo pacman -S rsync git lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts 	obconf xorg-server gnu-free-fonts polkit l3afpad
+	sudo pacman -S rsync git dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts 	obconf xorg-server gnu-free-fonts polkit l3afpad
 	git clone https://github.com/vinceliuice/Qogir-icon-theme
 	mkdir -p ~/.local/share/icons; ./Qogir-icon-theme/install.sh -d ~/.local/share/icons -c all
 	mkdir .themes
