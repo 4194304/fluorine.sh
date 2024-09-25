@@ -214,7 +214,7 @@ dialog --clear --title "Fluorine Setup" --gauge \
 	"Please wait while the setup process completes. \n
 \n
 While setup is running, please do not power off your computer or cancel setup." 10 50 100 & {
-  		echo "more unused space"
+  		mkdir -p ~/.config/l3afpad
 } &> /dev/null
 
 clear
