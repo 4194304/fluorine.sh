@@ -1,0 +1,221 @@
+#!/usr/bin/bash
+: ${DIALOG_CANCEL=1}
+tmp_file=$(tempfile 2>/dev/null) || tmp_file=/tmp/test$$
+trap "rm -f $tmp_file" 0 1 2 5 15
+dialog --title "Fluorine Setup" --clear --yesno \
+	"Welcome to Fluorine Setup. \n
+	\n
+	If you would like to install the \n
+	Fluorine desktop, select yes. \n
+	If you would like to abort, select no." 10 50 2> $tmp_file
+return_value=$?
+case $return_value in
+  $DIALOG_CANCEL)
+	dialog --title "Fluorine Setup" --clear --msgbox \
+	"Setup was aborted." 10 50
+	clear
+	exit
+esac
+dialog --title "Fluorine Setup" --clear --msgbox \
+	"To continue setting up Fluorine, please \n
+enter your password if prompted." 10 50
+clear
+sudo pacman -S rsync git dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 3 & {
+cd ~
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 7 & {
+clear
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 10 & {
+echo "might become opensnap installation in the future, currently unused"
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 14 & {
+git clone https://github.com/vinceliuice/Qogir-icon-theme
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 17  & {
+mkdir -p ~/.local/share/icons; ./Qogir-icon-theme/install.sh -d ~/.local/share/icons -c all
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 21  & {
+mkdir .themes
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 25  & {
+mkdir ~/Desktop
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 28  & {
+mkdir ~/Documents
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 32  & {
+mkdir ~/Downloads
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 35  & {
+mkdir ~/Music
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 39  & {
+mkdir ~/Pictures
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 42  & {
+mkdir ~/Videos
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 46  & {
+git clone -b Material-Black-Colors-Desktop https://github.com/rtlewis1/GTK.git
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 50  & {
+cp -R GTK/* ~/.themes/
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 53  & {
+git clone https://github.com/4194304/fluorine-desktop
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 57  & {
+rsync -av fluorine-desktop/ ~
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 61  & {
+curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 64  & {
+tar xvzf adwait	a-cursors.tar.gz
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 67  & {
+mkdir -p ~/.icons/default
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 71  & {
+mv adwaita-cursors/Adwaita/cursors ~/.icons/default
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 75  & {
+rm -rf fluorine-desktop Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 78  & {
+chmod -R +x ~/.fluorine
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 82  & {
+cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 86  & {
+  	cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 90 & {
+  		sed -i "s/fluorine/$USER/g" ~/.config/gtk-3.0/bookmarks
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 94 & {
+  		echo "more unused space"
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 97 & {
+  		echo "more unused space"
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 100 & {
+  		echo "more unused space"
+} &> /dev/null
+
+clear
+exec ~/.fluorine/setup/dialog.sh
