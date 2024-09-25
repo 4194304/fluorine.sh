@@ -20,12 +20,12 @@ if [[ $prompt == y* ]]; then
 	cp -R GTK/* ~/.themes/
 	git clone https://github.com/4194304/fluorine-desktop
 	rsync -av fluorine-desktop/ ~
- 	curl -O https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
-	tar xvzf adwaita-cursors.tar.gz
-	mkdir -p ~/.icons/default
-	mv adwaita-cursors/Adwaita/cursors ~/.icons/default
+ 	# curl -O https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
+	# tar xvzf adwaita-cursors.tar.gz
+	# mkdir -p ~/.icons/default
+	# mv adwaita-cursors/Adwaita/cursors ~/.icons/default
 	rm -rf fluorine-desktop Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
-	chmod +x ~/.fluorine/*
+	chmod -R +x ~/.fluorine
  	cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
   	cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
 	echo " "
