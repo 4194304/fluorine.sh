@@ -1,39 +1,93 @@
-echo " "
-echo "Would you like to install the Fluorine desktop?"
-echo "If so, respond by pressing "y" then hitting enter."
-echo "If not, please respond with anything other than that."
-read -p "Do you want to continue [y/n]: " prompt
-if [[ $prompt == y* ]]; then
-	cd ~
+#!/usr/bin/bash
+sudo pacman -S dialog
+: ${DIALOG_CANCEL=1}
+tmp_file=$(tempfile 2>/dev/null) || tmp_file=/tmp/test$$
+trap "rm -f $tmp_file" 0 1 2 5 15
+dialog --title "Fluorine Setup" --clear --yesno \
+	"Welcome to Fluorine Setup. \n
+	\n
+	If you would like to install the \n
+	Fluorine desktop, select yes. \n
+	If you would like to abort, select no." 10 50 2> $tmp_file
+return_value=$?
+case $return_value in
+  $DIALOG_CANCEL)
+	dialog --title "Fluorine Setup" --clear --msgbox \
+	"Setup was aborted." 10 50
 	clear
-	sudo pacman -S rsync git dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts 	obconf xorg-server gnu-free-fonts polkit l3afpad
-	git clone https://github.com/vinceliuice/Qogir-icon-theme
-	mkdir -p ~/.local/share/icons; ./Qogir-icon-theme/install.sh -d ~/.local/share/icons -c all
-	mkdir .themes
-	mkdir ~/Desktop
-	mkdir ~/Documents
-	mkdir ~/Downloads
-	mkdir ~/Music
-	mkdir ~/Pictures
-	mkdir ~/Videos
-	git clone -b Material-Black-Colors-Desktop https://github.com/rtlewis1/GTK.git
-	cp -R GTK/* ~/.themes/
-	git clone https://github.com/4194304/fluorine-desktop
-	rsync -av fluorine-desktop/ ~
- 	# curl -O https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
-	# tar xvzf adwaita-cursors.tar.gz
-	# mkdir -p ~/.icons/default
-	# mv adwaita-cursors/Adwaita/cursors ~/.icons/default
-	rm -rf fluorine-desktop Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
-	chmod -R +x ~/.fluorine
- 	cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
-  	cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
-	echo " "
-	sed -i "s/fluorine/$USER/g" ~/.config/gtk-3.0/bookmarks
-	echo "Installation complete!"
-	echo "If you would like to start Fluorine (if in a TTY), run startx."
 	exit
-else
-    echo "Stopping!"
-    exit
-fi
+esac
+dialog --title "Fluorine Setup" --clear --msgbox \
+	"To continue setting up Fluorine, please \n
+enter your password if prompted." 10 50
+sudo pacman -S rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad
+clear
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 0 & {
+cd ~
+clear
+echo "might become opensnap installation in the future, currently unused"
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 16 & {
+git clone https://github.com/vinceliuice/Qogir-icon-theme
+mkdir -p ~/.local/share/icons; ./Qogir-icon-theme/install.sh -d ~/.local/share/icons -c all
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 32  & {
+mkdir .themes
+mkdir ~/Desktop
+mkdir ~/Documents
+mkdir ~/Downloads
+mkdir ~/Music
+mkdir ~/Pictures
+mkdir ~/Videos
+git clone https://github.com/lawl/opensnap.git
+cd opensnap
+make
+sudo make install
+cd ~
+} &> /dev/null
+
+dialog --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 48  & {
+git clone -b Material-Black-Colors-Desktop https://github.com/rtlewis1/GTK.git
+cp -R GTK/* ~/.themes/
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 66  & {
+git clone https://github.com/4194304/fluorine-desktop
+rsync -av fluorine-desktop/ ~
+curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
+tar xvzf adwaita-cursors.tar.gz
+mkdir -p ~/.icons/default
+mv adwaita-cursors/Adwaita/cursors ~/.icons/default
+} &> /dev/null
+
+dialog --clear --title "Fluorine Setup" --gauge \
+	"Please wait while the setup process completes. \n
+\n
+While setup is running, please do not power off your computer or cancel setup." 10 50 83  & {
+rm -rf fluorine-desktop Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
+chmod -R +x ~/.fluorine
+cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
+cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
+sed -i "s/fluorine/$USER/g" ~/.config/gtk-3.0/bookmarks
+mkdir -p ~/.config/l3afpad
+} &> /dev/null
+
+clear
+exec ~/.fluorine/setup/dialog.sh
