@@ -69,8 +69,8 @@ dialog --title "Fluorine Setup" --clear --gauge \
 	"Please wait while the setup process completes. \n
 \n
 While setup is running, please do not power off your computer or cancel setup." 10 50 66  & {
-git clone https://github.com/4194304/fluorine-desktop
-rsync -av fluorine-desktop/ ~
+git clone https://github.com/4194304/fluorine
+rsync -av fluorine/ ~
 curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
 tar xvzf adwaita-cursors.tar.gz
 mkdir -p ~/.icons/default
@@ -81,7 +81,7 @@ dialog --title "Fluorine Setup" --clear --gauge \
 	"Please wait while the setup process completes. \n
 \n
 While setup is running, please do not power off your computer or cancel setup." 10 50 83  & {
-rm -rf fluorine-desktop Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
+rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
 chmod -R +x ~/.fluorine
 cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
 cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
