@@ -20,7 +20,7 @@ cd ~
 clear
 } &> /dev/null
 
-dialog --clear --title "Fluorine Setup" --gauge \
+dialog --title "Fluorine Setup" --gauge \
 	"Please wait while Fluorine updates. \n
 Do not power off or restart your computer." 10 50 66 & {
 git clone https://github.com/4194304/fluorine
@@ -34,12 +34,11 @@ mkdir -p ~/.icons/default
 mv adwaita-cursors/Adwaita/cursors ~/.icons/default
 } &> /dev/null
 
-dialog --clear --title "Fluorine Setup" --gauge \
+dialog --title "Fluorine Setup" --gauge \
 	"Please wait while the setup process completes. \n
 \n
 While setup is running, please do not power off your computer or cancel setup." 10 50 83 & {
 rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
 chmod -R +x ~/.fluorine
 } &> /dev/null
-
 clear
