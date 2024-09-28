@@ -89,5 +89,5 @@ sed -i "s/fluorine/$USER/g" ~/.config/gtk-3.0/bookmarks
 mkdir -p ~/.config/l3afpad
 } &> /dev/null
 
-clear
+clear &> /dev/stdout
 exec ~/.fluorine/setup/dialog.sh
