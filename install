@@ -65,7 +65,7 @@ git clone -b Material-Black-Colors-Desktop https://github.com/rtlewis1/GTK.git
 cp -R GTK/* ~/.themes/
 } &> /dev/null
 
-dialog --clear --title "Fluorine Setup" --gauge \
+dialog --title "Fluorine Setup" --gauge \
 	"Please wait while the setup process completes. \n
 \n
 While setup is running, please do not power off your computer or cancel setup." 10 50 66  & {
@@ -77,7 +77,7 @@ mkdir -p ~/.icons/default
 mv adwaita-cursors/Adwaita/cursors ~/.icons/default
 } &> /dev/null
 
-dialog --clear --title "Fluorine Setup" --gauge \
+dialog --title "Fluorine Setup" --gauge \
 	"Please wait while the setup process completes. \n
 \n
 While setup is running, please do not power off your computer or cancel setup." 10 50 83  & {
