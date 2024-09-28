@@ -23,9 +23,11 @@ clear
 dialog --clear --title "Fluorine Setup" --gauge \
 	"Please wait while Fluorine updates. \n
 Do not power off or restart your computer." 10 50 66 & {
-git clone https://github.com/4194304/fluorine-desktop
-rm -rf ~/fluorine/desktop/.config/
-rsync -av fluorine-desktop/ ~
+git clone https://github.com/4194304/fluorine
+rm -rf ~/fluorine/.config/
+rm ~/fluorine/.xinitrc
+rm ~/fluorine/.Xresources
+rsync -av fluorine/ ~
 curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
 tar xvzf adwaita-cursors.tar.gz
 mkdir -p ~/.icons/default
