@@ -1,1 +1,17 @@
-sudo pacman -S rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm 2>&1 | dialog --title "Fluorine Setup" --progressbox "Please wait while setup installs packages..." 30 20
+dialog --title "Updating..." --clear --gauge \
+	"Please wait while Fluorine updates. \n
+Do not power off or restart your computer." 10 50 0 & {
+cd ~
+clear
+git clone https://github.com/4194304/fluorine
+rm -rf ~/fluorine/.config/
+rm ~/fluorine/.xinitrc
+rm ~/fluorine/.Xresources
+rsync -av fluorine/ ~
+curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
+tar xvzf adwaita-cursors.tar.gz
+mkdir -p ~/.icons/default
+mv adwaita-cursors/Adwaita/cursors ~/.icons/default
+rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
+chmod -R +x ~/.fluorine
+} &> /dev/null
