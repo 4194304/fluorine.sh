@@ -20,7 +20,7 @@ esac
 dialog --title "Fluorine Setup" --clear --msgbox \
 	"To continue setting up Fluorine, please \n
 enter your password if prompted." 10 50
-sudo pacman -S rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm 2>&1 | dialog --title "Fluorine Setup" --progressbox "Please wait while setup installs packages..." 30 20
+sudo pacman -S rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm 2>&1 | dialog --title "Fluorine Setup" --progressbox "Please wait while setup installs packages..." 30 50
 clear
 dialog --title "Fluorine Setup" --clear --gauge \
 	"Please wait while the setup process completes. \n
