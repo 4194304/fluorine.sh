@@ -13,7 +13,6 @@ case $return_value in
 esac
 
 sudo pacman -S rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm 2>&1 | dialog --title "Fluorine Setup" --progressbox "Please wait while packages update..." 30 50
-clear
 dialog --title "Updating..." --clear --gauge \
 	"Please wait while Fluorine updates. \n
 Do not power off or restart your computer." 10 50 0 & {
