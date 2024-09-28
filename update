@@ -3,7 +3,7 @@
 tmp_file=$(tempfile 2>/dev/null) || tmp_file=/tmp/test$$
 trap "rm -f $tmp_file" 0 1 2 5 15
 dialog --title "Fluorine Setup" --clear --yesno \
-	"Would you like to update Fluorine?" 10 50 2> $tmp_file
+	"Would you like to update Fluorine?" 5 50 2> $tmp_file
 return_value=$?
 case $return_value in
   $DIALOG_CANCEL)
