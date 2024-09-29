@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 echo "Fluorine setup is starting..."
-doas apk add dialog git rsync font-cantarell ttf-freefont polkit xorg-server xinit xrdb tumbler xwallpaper lxterminal thunar jgmenu openbox tint2
+doas apk add dialog bash git rsync font-cantarell ttf-freefont polkit xorg-server xinit xrdb tumbler xwallpaper lxterminal thunar jgmenu openbox tint2
 cd ~
 clear
 git clone https://github.com/vinceliuice/Qogir-icon-theme
