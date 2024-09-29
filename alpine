@@ -18,6 +18,7 @@ git clone https://github.com/lawl/opensnap
 cd opensnap
 make
 doas make install
+cd ~
 git clone https://github.com/vinceliuice/Qogir-icon-theme
 mkdir -p ~/.local/share/icons; ./Qogir-icon-theme/install.sh -d ~/.local/share/icons -c all
 mkdir .themes
