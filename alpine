@@ -27,6 +27,4 @@ cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icon
 cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
 sed -i "s/fluorine/$USER/g" ~/.config/gtk-3.0/bookmarks
 mkdir -p ~/.config/l3afpad
-
-clear &> /dev/stdout
 bash ~/.fluorine/setup/dialog.sh
