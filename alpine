@@ -3,7 +3,7 @@ echo "Fluorine setup is starting..."
 doas setup-xorg-base
 doas apk add build-base
 doas apk add wmctrl lxappearance --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing/
-doas apk add dialog bash git rsync make font-cantarell autoconf ttf-freefont polkit xorg-server xinit xrdb tumbler xwallpaper lxterminal thunar jgmenu openbox tint2 gtk+3.0-dev automake intltool gcc
+doas apk add dialog dbus bash git rsync make font-cantarell autoconf ttf-freefont polkit xorg-server xinit xrdb tumbler xwallpaper lxterminal thunar jgmenu openbox tint2 gtk+3.0-dev automake intltool gcc
 cd ~
 clear
 curl -LO https://github.com/stevenhoneyman/l3afpad/archive/refs/heads/master.zip
