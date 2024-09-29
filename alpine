@@ -45,7 +45,6 @@ sed -i "s/fluorine/$USER/g" ~/.config/gtk-3.0/bookmarks
 mkdir -p ~/.config/l3afpad
 doas addgroup $USER input
 doas addgroup $USER video
-bash ~/.fluorine/setup/dialog.sh
 clear
 echo "Installation complete!"
 echo " "
