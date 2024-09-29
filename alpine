@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 echo "Fluorine setup is starting..."
 doas setup-xorg-base
 doas apk add build-base
