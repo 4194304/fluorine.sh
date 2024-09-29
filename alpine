@@ -50,10 +50,6 @@ mkdir ~/Downloads
 mkdir ~/Music
 mkdir ~/Pictures
 mkdir ~/Videos
-git clone https://github.com/lawl/opensnap.git
-cd opensnap
-make
-sudo make install
 cd ~
 } &> /dev/null
 
@@ -90,4 +86,4 @@ mkdir -p ~/.config/l3afpad
 } &> /dev/null
 
 clear &> /dev/stdout
-exec ~/.fluorine/setup/dialog.sh
+bash ~/.fluorine/setup/dialog.sh
