@@ -9,15 +9,10 @@ clear
 curl -LO https://github.com/stevenhoneyman/l3afpad/archive/refs/heads/master.zip
 unzip master.zip
 cd l3afpad-master
-echo "1"
 bash ./autogen.sh
-echo "2"
-exec ./configure
-echo "3"
+bash ./configure
 make
-echo "4"
 doas make install-strip
-echo "5"
 cd ~
 echo "complete"
 git clone https://github.com/lawl/opensnap
