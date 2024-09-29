@@ -46,11 +46,3 @@ mkdir -p ~/.config/l3afpad
 doas addgroup $USER input
 doas addgroup $USER video
 clear
-echo "Installation complete!"
-echo " "
-echo "To start X11 properly, please reboot."
-echo "If necessary, run the commands listed below, then reboot:"
-echo " "
-echo "addgroup $USER input"
-echo "addgroup $USER video"
-echo " "
