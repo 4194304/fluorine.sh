@@ -12,7 +12,7 @@ case $return_value in
 	exit
 esac
 
-sudo pacman -S rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
+sudo pacman -S xorg-xdpyinfo bc rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
 clear
 git clone https://github.com/4194304/fluorine
 rm -rf ~/fluorine/.config/
@@ -23,7 +23,7 @@ curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.
 tar xvzf adwaita-cursors.tar.gz
 mkdir -p ~/.icons/default
 mv adwaita-cursors/Adwaita/cursors ~/.icons/default
-rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
+rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors adwaita-cursors.tar.gz opensnap
 chmod -R +x ~/.fluorine
 
 clear &> /dev/stdout
