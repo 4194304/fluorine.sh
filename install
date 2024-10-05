@@ -17,7 +17,7 @@ case $return_value in
 	clear
 	exit
 esac
-sudo pacman -S xorg-xdpyinfo rsync bc xorg-xrandr git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
+sudo pacman -Sy xorg-xdpyinfo rsync bc xorg-xrandr git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
 cd ~
 clear
 git clone https://github.com/vinceliuice/Qogir-icon-theme
