@@ -42,7 +42,7 @@ curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.
 tar xvzf adwaita-cursors.tar.gz
 mkdir -p ~/.icons/default
 mv adwaita-cursors/Adwaita/cursors ~/.icons/default
-rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
+rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors adwaita-cursors.tar.gz opensnap
 chmod -R +x ~/.fluorine
 cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
 cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
