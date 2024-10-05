@@ -12,7 +12,7 @@ case $return_value in
 	exit
 esac
 
-sudo pacman -S xorg-xdpyinfo xorg-xrandr bc rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
+sudo pacman -Sy xorg-xdpyinfo xorg-xrandr bc rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
 clear
 git clone https://github.com/4194304/fluorine
 rm -rf ~/fluorine/.config/
