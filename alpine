@@ -37,7 +37,7 @@ curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.
 tar xvzf adwaita-cursors.tar.gz
 mkdir -p ~/.icons/default
 mv adwaita-cursors/Adwaita/cursors ~/.icons/default
-rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors
+rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors l3afpad-master opensnap master.zip adwaita-cursors.tar.gz
 chmod -R +x ~/.fluorine
 cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
 cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
@@ -46,3 +46,7 @@ mkdir -p ~/.config/l3afpad
 doas addgroup $USER input
 doas addgroup $USER video
 clear
+echo "Fluorine setup is complete!"
+echo "To start Fluorine properly, please log out, and then log back in."
+echo "IMPORTANT: Restarting or shutting down may result in you getting a wallpaper and a cursor."
+echo " "
