@@ -1,29 +1,66 @@
-#!/usr/bin/bash
-sudo echo "Starting update setup..."
-: ${DIALOG_CANCEL=1}
-tmp_file=$(tempfile 2>/dev/null) || tmp_file=/tmp/test$$
-trap "rm -f $tmp_file" 0 1 2 5 15
-dialog --title "Fluorine Setup" --clear --yesno \
-	"Would you like to update Fluorine?" 5 50 2> $tmp_file
-return_value=$?
-case $return_value in
-  $DIALOG_CANCEL)
-	clear
-	exit
-esac
-
-sudo pacman -Sy xorg-xdpyinfo xorg-xrandr bc rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
-clear
-git clone https://github.com/4194304/fluorine
-rm -rf ~/fluorine/.config/
-rm ~/fluorine/.xinitrc
-rm ~/fluorine/.Xresources
-rsync -av fluorine/ ~
-curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
-tar xvzf adwaita-cursors.tar.gz
-mkdir -p ~/.icons/default
-mv adwaita-cursors/Adwaita/cursors ~/.icons/default
-rm -rf fluorine Qogir-icon-theme GTK screenshot.png LICENSE README.md fluorine-settings adwaita-cursors adwaita-cursors.tar.gz opensnap
-chmod -R +x ~/.fluorine
-
-clear &> /dev/stdout
+#!/bin/bash
+echo "Welcome to Fluorine setup."
+echo " "
+PS3="What action would you like to perform? "
+select option in Proceed Cancel Show\ dependencies Run\ preinstall\ command Alpine\ install
+do
+	case $option in
+		"Proceed")
+			echo "Fluorine setup is starting..."
+			echo " "
+			git clone https://github.com/4194304/fluorine
+			cp -R ~/fluorine/* ~/
+			chmod -R +x ~/.fluorine/*.sh
+			rm -rf ~/fluorine adwaita-cursors ~/GTK adwaita-cursors.tar.gz
+			echo " "
+			echo "Upgrade complete. Please restart Fluorine for new changes to take effect."
+			break;;
+		"Cancel")
+			exit
+			break;;
+		"Show dependencies")
+			echo '
+openbox
+bc
+thunar
+tumbler
+gpicview
+l3afpad
+lxterminal
+opensnap (compiled)
+sed
+tint2
+jgmenu
+polkit
+xwallpaper
+cantarell-fonts
+git
+wmctrl
+lxappearance
+xwallpaper
+xorg-xinit
+xorg-xrdb
+obconf
+xorg-server
+gnu-free-fonts
+Qogir icon theme (set up separately)' | more;;
+		"Run preinstall command")
+			read -p "Enter a command: " command
+			$command
+		"Alpine install")
+			echo "Fluorine setup is starting..."
+			git clone https://github.com/4194304/fluorine
+			cp -R ~/fluorine/* ~/
+			chmod -R +x ~/.fluorine/*.sh
+			curl -LO https://github.com/stevenhoneyman/l3afpad/archive/refs/heads/master.zip
+			unzip master.zip
+			bash l3afpad-master/autogen.sh
+			bash l3afpad-master/configure
+			make l3afpad-master/
+			doas make l3afpad-master/ install-strip
+			rm -rf ~/fluorine adwaita-cursors ~/GTK adwaita-cursors.tar.gz l3afpad-master master.zip
+			echo " "
+			echo "Upgrade complete. Please restart Fluorine for new changes to take effect."
+			break;;
+ 	esac
+done
