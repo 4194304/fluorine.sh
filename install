@@ -8,7 +8,7 @@ do
 		"Proceed")
 			echo "Fluorine setup is starting..."
 			echo " "
-			sudo pacman -Sy bc git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
+			sudo pacman -Sy bc rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
 			git clone https://github.com/4194304/fluorine
 			mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos ~/.fluorine ~/.themes ~/.icons/default ~/.config/l3afpad
 			rsync -a fluorine/ ~/
