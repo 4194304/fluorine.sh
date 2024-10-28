@@ -8,7 +8,7 @@ do
 		"Proceed")
 			echo "Fluorine setup is starting..."
 			echo " "
-			sudo pacman -Sy
+			sudo pacman -Sy imagemagick
 			git clone https://github.com/4194304/fluorine
 			rsync -a fluorine/ ~/
 			chmod -R +x ~/.fluorine/*.sh
