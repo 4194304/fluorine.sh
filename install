@@ -79,7 +79,7 @@ Qogir icon theme (set up separately)' | more;;
 			mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos ~/.fluorine ~/.themes ~/.icons/default ~/.config/l3afpad
 			rsync -a fluorine/ ~/
 			git clone https://github.com/lawl/opensnap
-			make ~/opensnap/
+			make -C opensnap/
 			doas make install ~/opensnap/
 			git clone -b Material-Black-Colors-Desktop https://github.com/rtlewis1/GTK
 			cp -R GTK/* ~/.themes/
