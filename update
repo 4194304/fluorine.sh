@@ -2,24 +2,20 @@
 echo "Welcome to Fluorine setup."
 echo " "
 PS3="What action would you like to perform? "
-select option in Proceed Cancel Show\ dependencies Run\ preinstall\ command Alpine\ install
+select option in Proceed Cancel Show\ dependencies Run\ preinstall\ command
 do
 	case $option in
 		"Proceed")
 			echo "Fluorine setup is starting..."
 			echo " "
+			sudo pacman -Sy
 			git clone https://github.com/4194304/fluorine
-			cp -R ~/fluorine/* ~/
+			rsync -a fluorine/ ~/
 			chmod -R +x ~/.fluorine/*.sh
-			rm -rf ~/fluorine adwaita-cursors ~/GTK adwaita-cursors.tar.gz
+			rm -rf fluorine adwaita-cursors GTK adwaita-cursors.tar.gz Qogir-icon-theme opensnap LICENSE README.md
 			echo " "
-			echo "Upgrade complete. Please restart Fluorine for new changes to take effect."
+			echo "Update complete!"
 			break;;
-		"Cancel")
-			exit
-			break;;
-		"Show dependencies")
-			echo '
 openbox
 bc
 thunar
@@ -47,20 +43,5 @@ Qogir icon theme (set up separately)' | more;;
 		"Run preinstall command")
 			read -p "Enter a command: " command
 			$command
-		"Alpine install"
-			echo "Fluorine setup is starting..."
-			git clone https://github.com/4194304/fluorine
-			cp -R ~/fluorine/* ~/
-			chmod -R +x ~/.fluorine/*.sh
-			curl -LO https://github.com/stevenhoneyman/l3afpad/archive/refs/heads/master.zip
-			unzip master.zip
-			bash l3afpad-master/autogen.sh
-			bash l3afpad-master/configure
-			make l3afpad-master/
-			doas make l3afpad-master/ install-strip
-			rm -rf ~/fluorine adwaita-cursors ~/GTK adwaita-cursors.tar.gz l3afpad-master master.zip
-			echo " "
-			echo "Upgrade complete. Please restart Fluorine for new changes to take effect."
-			break;;
  	esac
 done
