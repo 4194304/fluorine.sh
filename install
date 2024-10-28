@@ -26,7 +26,7 @@ do
 			mv adwaita-cursors/Adwaita/cursors ~/.icons/default
 			sed -i "s/fluorine/$USER/g" ~/.config/gtk-3.0/bookmarks
 			chmod -R +x ~/.fluorine/*.sh
-			rm -rf fluorine adwaita-cursors GTK adwaita-cursors.tar.gz Qogir-icon-theme
+			rm -rf fluorine adwaita-cursors GTK adwaita-cursors.tar.gz Qogir-icon-theme opensnap LICENSE README.md
 			echo " "
 			echo "Fluorine setup is complete."
 			echo "Before Fluorine is started for the first time, please choose an appropriate scale factor."
