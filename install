@@ -42,7 +42,7 @@ do
 			exit
 			break;;
 		"Show dependencies")
-			echo '
+			echo "
 openbox
 bc
 thunar
@@ -50,7 +50,7 @@ tumbler
 gpicview
 l3afpad
 lxterminal
-opensnap (compiled)
+opensnap
 sed
 tint2
 jgmenu
@@ -66,7 +66,7 @@ xorg-xrdb
 obconf
 xorg-server
 gnu-free-fonts
-Qogir icon theme (set up separately)' | more;;
+Qogir icon theme" | more;;
 		"Run preinstall command")
 			read -p "Enter a command: " command
 			$command
