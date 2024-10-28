@@ -10,7 +10,7 @@ do
 			echo " "
 			sudo pacman -Sy bc imagemagick rsync git wmctrl dialog lxappearance-obconf lxterminal xorg-xrdb tint2 openbox jgmenu xwallpaper xorg-xinit thunar tumbler cantarell-fonts obconf xorg-server gnu-free-fonts polkit l3afpad --noconfirm
 			git clone https://github.com/4194304/fluorine
-			mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos ~/.fluorine ~/.themes ~/.icons/default ~/.config/l3afpad
+			mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos ~/.fluorine ~/.themes ~/.config/l3afpad
 			rsync -a fluorine/ ~/
 			git clone https://github.com/lawl/opensnap
 			make -C ~/opensnap/
@@ -18,7 +18,7 @@ do
 			git clone -b Material-Black-Colors-Desktop https://github.com/rtlewis1/GTK
 			cp -R GTK/* ~/.themes/
 			git clone https://github.com/vinceliuice/Qogir-icon-theme
-			mkdir -p ~/.local/share/icons; ./Qogir-icon-theme/install.sh -d ~/.local/share/icons -c all
+			mkdir -p ~/.local/share/icons; Qogir-icon-theme/install.sh -d ~/.local/share/icons -c all
 			cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
 			cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
 			curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
