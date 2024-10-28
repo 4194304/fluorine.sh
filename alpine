@@ -8,7 +8,7 @@ echo "Fluorine setup is starting..."
 			rsync -a fluorine/ ~/
 			git clone https://github.com/lawl/opensnap
 			make -C opensnap/
-			doas make install ~/opensnap/
+			doas make install -C opensnap/
 			git clone -b Material-Black-Colors-Desktop https://github.com/rtlewis1/GTK
 			cp -R GTK/* ~/.themes/
 			git clone https://github.com/vinceliuice/Qogir-icon-theme
