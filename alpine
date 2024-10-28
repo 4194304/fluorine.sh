@@ -21,10 +21,12 @@ echo "Fluorine setup is starting..."
 			chmod -R +x ~/.fluorine/*.sh
 			curl -LO https://github.com/stevenhoneyman/l3afpad/archive/refs/heads/master.zip
 			unzip master.zip
-			bash l3afpad-master/autogen.sh
-			bash l3afpad-master/configure
-			make -C l3afpad-master/
-			doas make -C l3afpad-master/ install-strip
+			cd l3afpad-master
+			autogen.sh
+			./configure
+			make
+			doas make -C l3afpad-master
+			cd ..
 			rm -rf fluorine adwaita-cursors GTK adwaita-cursors.tar.gz l3afpad-master master.zip
 			doas addgroup $USER video
 			doas addgroup $USER input
