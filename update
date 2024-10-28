@@ -47,7 +47,7 @@ Qogir icon theme (set up separately)' | more;;
 		"Run preinstall command")
 			read -p "Enter a command: " command
 			$command
-		"Alpine install")
+		"Alpine install"
 			echo "Fluorine setup is starting..."
 			git clone https://github.com/4194304/fluorine
 			cp -R ~/fluorine/* ~/
