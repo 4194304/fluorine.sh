@@ -25,7 +25,7 @@ echo "Fluorine setup is starting..."
 			autogen.sh
 			./configure
 			make
-			doas make -C l3afpad-master
+			doas make install-strip
 			cd ..
 			rm -rf fluorine adwaita-cursors GTK adwaita-cursors.tar.gz l3afpad-master master.zip
 			doas addgroup $USER video
