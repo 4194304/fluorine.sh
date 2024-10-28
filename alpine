@@ -23,7 +23,7 @@ echo "Fluorine setup is starting..."
 			curl -LO https://github.com/stevenhoneyman/l3afpad/archive/refs/heads/master.zip
 			unzip master.zip
 			cd l3afpad-master
-			autogen.sh
+			./autogen.sh
 			./configure
 			make
 			doas make install-strip
