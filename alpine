@@ -11,6 +11,7 @@ echo "Fluorine setup is starting..."
 			doas make install ~/opensnap/
 			git clone -b Material-Black-Colors-Desktop https://github.com/rtlewis1/GTK
 			cp -R GTK/* ~/.themes/
+			git clone https://github.com/vinceliuice/Qogir-icon-theme
 			mkdir -p ~/.local/share/icons; ./Qogir-icon-theme/install.sh -d ~/.local/share/icons -c all
 			cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
 			cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
