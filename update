@@ -2,7 +2,7 @@
 echo "Welcome to Fluorine setup."
 echo " "
 PS3="What action would you like to perform? "
-select option in Proceed Cancel Show\ dependencies Run\ preinstall\ command
+select option in Proceed Cancel Run\ preinstall\ command
 do
 	case $option in
 		"Proceed")
@@ -16,30 +16,8 @@ do
 			echo " "
 			echo "Update complete!"
 			break;;
-openbox
-bc
-thunar
-tumbler
-gpicview
-l3afpad
-lxterminal
-opensnap (compiled)
-sed
-tint2
-jgmenu
-polkit
-xwallpaper
-cantarell-fonts
-git
-wmctrl
-lxappearance
-xwallpaper
-xorg-xinit
-xorg-xrdb
-obconf
-xorg-server
-gnu-free-fonts
-Qogir icon theme (set up separately)' | more;;
+		"Cancel")
+			break;;
 		"Run preinstall command")
 			read -p "Enter a command: " command
 			$command
