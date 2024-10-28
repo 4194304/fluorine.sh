@@ -2,7 +2,7 @@
 echo "Welcome to Fluorine setup."
 echo " "
 PS3="What action would you like to perform? "
-select option in Proceed Cancel Show\ dependencies Run\ preinstall\ command Alpine\ install
+select option in Proceed Cancel Show\ dependencies Run\ preinstall\ command
 do
 	case $option in
 		"Proceed")
@@ -70,50 +70,5 @@ Qogir icon theme" | more;;
 		"Run preinstall command")
 			read -p "Enter a command: " command
 			$command
-		"Alpine install")
-			echo "Fluorine setup is starting..."
-			doas setup-xorg-base
-			doas apk add rsync imagemagick build-base dbus-openrc bash git make unzip font-cantarell autoconf ttf-freefont polkit xorg-server xinit xrdb tumbler xwallpaper lxterminal thunar jgmenu openbox tint2 gtk+3.0-dev automake intltool gcc
-			doas apk add wmctrl lxappearance --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing/
-			git clone https://github.com/4194304/fluorine
-			mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos ~/.fluorine ~/.themes ~/.icons/default ~/.config/l3afpad
-			rsync -a fluorine/ ~/
-			git clone https://github.com/lawl/opensnap
-			make -C opensnap/
-			doas make install ~/opensnap/
-			git clone -b Material-Black-Colors-Desktop https://github.com/rtlewis1/GTK
-			cp -R GTK/* ~/.themes/
-			mkdir -p ~/.local/share/icons; ./Qogir-icon-theme/install.sh -d ~/.local/share/icons -c all
-			cp ~/.local/share/icons/Qogir/scalable/apps/file-manager.svg ~/.local/share/icons/Qogir/scalable/apps/org.xfce.thunar.svg
-			cp ~/.local/share/icons/Qogir/scalable/apps/org.xfce.terminal.svg ~/.local/share/icons/Qogir/scalable/apps/lxterminal.svg
-			curl -LO https://github.com/manu-mannattil/adwaita-cursors/releases/download/v1.2/adwaita-cursors.tar.gz
-			tar xvzf adwaita-cursors.tar.gz
-			mv adwaita-cursors/Adwaita/cursors ~/.icons/default
-			sed -i "s/fluorine/$USER/g" ~/.config/gtk-3.0/bookmarks
-			chmod -R +x ~/.fluorine/*.sh
-			curl -LO https://github.com/stevenhoneyman/l3afpad/archive/refs/heads/master.zip
-			unzip master.zip
-			bash l3afpad-master/autogen.sh
-			bash l3afpad-master/configure
-			make -C l3afpad-master/
-			doas make l3afpad-master/ install-strip
-			rm -rf fluorine adwaita-cursors GTK adwaita-cursors.tar.gz l3afpad-master master.zip
-			doas addgroup $USER video
-			doas addgroup $USER input
-			echo " "
-			echo "Fluorine setup is complete."
-			echo "Before Fluorine is started for the first time, please choose an appropriate scale factor."
-			echo " "
-			echo "This can be changed at any time through the Fluorine Settings application."
-			echo " "
-			read -p "Scale factor: " scale
-			~/.fluorine/scale.sh $scale
-			echo " "
-			echo "Installation complete!"
-			echo " "
-			echo "IMPORTANT:"
-			echo "Please add your user to the appropriate video groups, otherwise Fluorine may break!"
-			echo " "
-			break;;
  	esac
 done
