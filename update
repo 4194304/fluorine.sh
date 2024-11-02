@@ -10,6 +10,7 @@ do
 			echo " "
 			sudo pacman -Sy imagemagick
 			git clone https://github.com/4194304/fluorine
+			rm -rf fluorine/.config
 			rsync -a fluorine/ ~/
 			chmod -R +x ~/.fluorine/*.sh
 			rm -rf fluorine adwaita-cursors GTK adwaita-cursors.tar.gz Qogir-icon-theme opensnap LICENSE README.md
