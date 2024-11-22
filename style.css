@@ -2,7 +2,7 @@ body
 {
 	background-color:gray;
 	color:black;
-  font-family:"Cantarell";
+  font-family:"Cantarell", "Sans";
   background-image:url("images/background2.png");
   background-repeat:no-repeat;
 }
