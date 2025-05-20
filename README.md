@@ -1,1 +1,1 @@
-things that I throw into my domain using github pages
+things that I throw on to my domain using github pages
