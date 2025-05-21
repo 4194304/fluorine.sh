@@ -1,4 +1,12 @@
-The following files are not present on here in PNG format due to file size limitations:
+The following files are not present on here in PNG format due to file size limitations (might bring them on here with GitLFS):
 
-menger-sponge-8k.png
-waves-normal-8k.png
+menger-sponge-8k.png  (35.8MB)
+waves-normal-8k.png (26.3MB)
+waves-8k-hdr.png (35.2MB)
+comb.png (34.5MB)
+
+"Colossal" images (16K or higher, I have no idea how I could host these):
+menger-sponge-32k.png (533MB)
+menger-sponge-32k.jpg (203MB)
+octahedron_16k_hdr.jpg (56.2MB)
+octahedron_16k_hdr.png (186.1MB)
