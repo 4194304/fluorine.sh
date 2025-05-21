@@ -1,8 +1,11 @@
+All of the licenses for the following (excluding images as there is no license), is in the root directory of this repository.
+GPLv3 is under ROOT_DIRECTORY_LICENSE, while CC0 is in the file MANDELBULB_LICENSE.
+
 This repository uses the following licenses for the following files and directories:
 
-Inside the root directory:
+Inside the root directory of this repository:
 
-index.html, install, style.css, update is licensed under GPL 3.0 (for consistency with the core project).
+The files index.html, install, style.css, and update are licensed under GPL 3.0 (for consistency with the core project Fluorine which is now archived).
 
 
 The images directory:
