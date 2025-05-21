@@ -1,0 +1,16 @@
+This repository uses the following licenses for the following files and directories:
+
+Inside the root directory:
+
+index.html, install, style.css, update is licensed under GPL 3.0 (for consistency with the core project).
+
+
+The images directory:
+
+Everything inside the images folder will not have a license (thus ARR), as it is kinda just stuff I dump on here such as screenshots.
+
+
+Mandelbulber stuff (mandelbulb, fractal-settings directories):
+
+These are licensed entirely under the terms of Creative Commons Zero Universal.
+
