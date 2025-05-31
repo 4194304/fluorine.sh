@@ -1,0 +1,764 @@
+making all in ./regexp...
+make[1]: Entering directory '/home/*******/Downloads/xfm-1.4.3/regexp'
+make[1]: warning: -j16 forced in submake: resetting jobserver mode.
+rm -f regexp.o
+rm -f regsub.o
+gcc -c -O2 -Wall -Wno-parentheses    -I. -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 		  				  -DFUNCPROTO=15 -DNARROWPROTO      regexp.c
+gcc -c -O2 -Wall -Wno-parentheses    -I. -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 		  				  -DFUNCPROTO=15 -DNARROWPROTO      regsub.c
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdio.h:28,
+                 from regexp.c:25:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdio.h:28,
+                 from regsub.c:21:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+regsub.c: In function 'regsub':
+regsub.c:35:1: warning: old-style function definition [-Wold-style-definition]
+   35 | regsub(prog, source, dest)
+      | ^~~~~~
+regsub.c:39:1: error: number of arguments doesn't match prototype
+   39 | {
+      | ^
+In file included from regsub.c:22:
+regexp.h:21:13: error: prototype declaration
+   21 | extern void regsub();
+      |             ^~~~~~
+regsub.c:45:22: warning: conflicting types for built-in function 'strncpy'; expected 'char *(char *, const char *, long unsigned int)' [-Wbuiltin-declaration-mismatch]
+   45 |         extern char *strncpy();
+      |                      ^~~~~~~
+regsub.c:24:1: note: 'strncpy' is declared in header '<string.h>'
+   23 | #include "regmagic.h"
+  +++ |+#include <string.h>
+   24 | 
+regsub.c:48:17: error: too many arguments to function 'regerror'; expected 0, have 1
+   48 |                 regerror("NULL parm to regsub");
+      |                 ^~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regsub.c:52:17: error: too many arguments to function 'regerror'; expected 0, have 1
+   52 |                 regerror("damaged regexp fed to regsub");
+      |                 ^~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regsub.c:70:32: error: too many arguments to function 'strncpy'; expected 0, have 3
+   70 |                         (void) strncpy(dst, prog->startp[no], len);
+      |                                ^~~~~~~ ~~~
+regsub.c:45:22: note: declared here
+   45 |         extern char *strncpy();
+      |                      ^~~~~~~
+regsub.c:73:33: error: too many arguments to function 'regerror'; expected 0, have 1
+   73 |                                 regerror("damaged match string");
+      |                                 ^~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c: In function 'regcomp':
+regexp.c:190:1: warning: old-style function definition [-Wold-style-definition]
+  190 | regcomp(exp)
+      | ^~~~~~~
+regexp.c:192:1: error: number of arguments doesn't match prototype
+  192 | {
+      | ^
+In file included from regexp.c:27:
+regexp.h:19:16: error: prototype declaration
+   19 | extern regexp *regcomp();
+      |                ^~~~~~~
+regexp.c:198:22: warning: conflicting types for built-in function 'malloc'; expected 'void *(long unsigned int)' [-Wbuiltin-declaration-mismatch]
+  198 |         extern char *malloc();
+      |                      ^~~~~~
+regexp.c:29:1: note: 'malloc' is declared in header '<stdlib.h>'
+   28 | #include "regmagic.h"
+  +++ |+#include <stdlib.h>
+   29 | 
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:201:17: note: in expansion of macro 'FAIL'
+  201 |                 FAIL("NULL argument");
+      |                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:208:9: error: too many arguments to function 'regc'; expected 0, have 1
+  208 |         regc(MAGIC);
+      |         ^~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:209:13: error: too many arguments to function 'reg'; expected 0, have 2
+  209 |         if (reg(0, &flags) == NULL)
+      |             ^~~ ~
+regexp.c:160:14: note: declared here
+  160 | STATIC char *reg();
+      |              ^~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:214:17: note: in expansion of macro 'FAIL'
+  214 |                 FAIL("regexp too big");
+      |                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:217:23: error: too many arguments to function 'malloc'; expected 0, have 1
+  217 |         r = (regexp *)malloc(sizeof(regexp) + (unsigned)regsize);
+      |                       ^~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+regexp.c:198:22: note: declared here
+  198 |         extern char *malloc();
+      |                      ^~~~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:219:17: note: in expansion of macro 'FAIL'
+  219 |                 FAIL("out of space");
+      |                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:225:9: error: too many arguments to function 'regc'; expected 0, have 1
+  225 |         regc(MAGIC);
+      |         ^~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:226:13: error: too many arguments to function 'reg'; expected 0, have 2
+  226 |         if (reg(0, &flags) == NULL)
+      |             ^~~ ~
+regexp.c:160:14: note: declared here
+  160 | STATIC char *reg();
+      |              ^~~
+regexp.c:235:16: error: too many arguments to function 'regnext'; expected 0, have 1
+  235 |         if (OP(regnext(scan)) == END) {         /* Only one top-level choice. */
+      |                ^~~~~~~ ~~~~
+regexp.c:115:20: note: in definition of macro 'OP'
+  115 | #define OP(p)   (*(p))
+      |                    ^
+regexp.c:165:14: note: declared here
+  165 | STATIC char *regnext();
+      |              ^~~~~~~
+regexp.c:255:53: error: too many arguments to function 'regnext'; expected 0, have 1
+  255 |                         for (; scan != NULL; scan = regnext(scan))
+      |                                                     ^~~~~~~ ~~~~
+regexp.c:165:14: note: declared here
+  165 | STATIC char *regnext();
+      |              ^~~~~~~
+regexp.c: In function 'reg':
+regexp.c:278:1: warning: old-style function definition [-Wold-style-definition]
+  278 | reg(paren, flagp)
+      | ^~~
+make[1]: *** [Makefile:1081: regsub.o] Error 1
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:293:25: note: in expansion of macro 'FAIL'
+  293 |                         FAIL("too many ()");
+      |                         ^~~~
+make[1]: *** Waiting for unfinished jobs....
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:296:23: error: too many arguments to function 'regnode'; expected 0, have 1
+  296 |                 ret = regnode(OPEN+parno);
+      |                       ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:301:14: error: too many arguments to function 'regbranch'; expected 0, have 1
+  301 |         br = regbranch(&flags);
+      |              ^~~~~~~~~ ~~~~~~
+regexp.c:161:14: note: declared here
+  161 | STATIC char *regbranch();
+      |              ^~~~~~~~~
+regexp.c:305:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  305 |                 regtail(ret, br);       /* OPEN -> first. */
+      |                 ^~~~~~~ ~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:313:22: error: too many arguments to function 'regbranch'; expected 0, have 1
+  313 |                 br = regbranch(&flags);
+      |                      ^~~~~~~~~ ~~~~~~
+regexp.c:161:14: note: declared here
+  161 | STATIC char *regbranch();
+      |              ^~~~~~~~~
+regexp.c:316:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  316 |                 regtail(ret, br);       /* BRANCH -> BRANCH. */
+      |                 ^~~~~~~ ~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:323:17: error: too many arguments to function 'regnode'; expected 0, have 1
+  323 |         ender = regnode((paren) ? CLOSE+parno : END);
+      |                 ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:324:9: error: too many arguments to function 'regtail'; expected 0, have 2
+  324 |         regtail(ret, ender);
+      |         ^~~~~~~ ~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:327:41: error: too many arguments to function 'regnext'; expected 0, have 1
+  327 |         for (br = ret; br != NULL; br = regnext(br))
+      |                                         ^~~~~~~ ~~
+regexp.c:165:14: note: declared here
+  165 | STATIC char *regnext();
+      |              ^~~~~~~
+regexp.c:328:17: error: too many arguments to function 'regoptail'; expected 0, have 2
+  328 |                 regoptail(br, ender);
+      |                 ^~~~~~~~~ ~~
+regexp.c:169:13: note: declared here
+  169 | STATIC void regoptail();
+      |             ^~~~~~~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:332:17: note: in expansion of macro 'FAIL'
+  332 |                 FAIL("unmatched ()");
+      |                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:335:25: note: in expansion of macro 'FAIL'
+  335 |                         FAIL("unmatched ()");
+      |                         ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:337:25: note: in expansion of macro 'FAIL'
+  337 |                         FAIL("junk on end");    /* "Can't happen". */
+      |                         ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c: In function 'regbranch':
+regexp.c:350:1: warning: old-style function definition [-Wold-style-definition]
+  350 | regbranch(flagp)
+      | ^~~~~~~~~
+regexp.c:360:15: error: too many arguments to function 'regnode'; expected 0, have 1
+  360 |         ret = regnode(BRANCH);
+      |               ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:363:26: error: too many arguments to function 'regpiece'; expected 0, have 1
+  363 |                 latest = regpiece(&flags);
+      |                          ^~~~~~~~ ~~~~~~
+regexp.c:162:14: note: declared here
+  162 | STATIC char *regpiece();
+      |              ^~~~~~~~
+regexp.c:370:25: error: too many arguments to function 'regtail'; expected 0, have 2
+  370 |                         regtail(chain, latest);
+      |                         ^~~~~~~ ~~~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:374:24: error: too many arguments to function 'regnode'; expected 0, have 1
+  374 |                 (void) regnode(NOTHING);
+      |                        ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c: In function 'regpiece':
+regexp.c:389:1: warning: old-style function definition [-Wold-style-definition]
+  389 | regpiece(flagp)
+      | ^~~~~~~~
+regexp.c:397:15: error: too many arguments to function 'regatom'; expected 0, have 1
+  397 |         ret = regatom(&flags);
+      |               ^~~~~~~ ~~~~~~
+regexp.c:163:14: note: declared here
+  163 | STATIC char *regatom();
+      |              ^~~~~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:408:17: note: in expansion of macro 'FAIL'
+  408 |                 FAIL("*+ operand could be empty");
+      |                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:412:17: error: too many arguments to function 'reginsert'; expected 0, have 2
+  412 |                 reginsert(STAR, ret);
+      |                 ^~~~~~~~~
+regexp.c:167:13: note: declared here
+  167 | STATIC void reginsert();
+      |             ^~~~~~~~~
+regexp.c:415:17: error: too many arguments to function 'reginsert'; expected 0, have 2
+  415 |                 reginsert(BRANCH, ret);                 /* Either x */
+      |                 ^~~~~~~~~
+regexp.c:167:13: note: declared here
+  167 | STATIC void reginsert();
+      |             ^~~~~~~~~
+regexp.c:416:32: error: too many arguments to function 'regnode'; expected 0, have 1
+  416 |                 regoptail(ret, regnode(BACK));          /* and loop */
+      |                                ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:416:17: error: too many arguments to function 'regoptail'; expected 0, have 2
+  416 |                 regoptail(ret, regnode(BACK));          /* and loop */
+      |                 ^~~~~~~~~ ~~~
+regexp.c:169:13: note: declared here
+  169 | STATIC void regoptail();
+      |             ^~~~~~~~~
+regexp.c:417:17: error: too many arguments to function 'regoptail'; expected 0, have 2
+  417 |                 regoptail(ret, ret);                    /* back */
+      |                 ^~~~~~~~~ ~~~
+regexp.c:169:13: note: declared here
+  169 | STATIC void regoptail();
+      |             ^~~~~~~~~
+regexp.c:418:30: error: too many arguments to function 'regnode'; expected 0, have 1
+  418 |                 regtail(ret, regnode(BRANCH));          /* or */
+      |                              ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:418:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  418 |                 regtail(ret, regnode(BRANCH));          /* or */
+      |                 ^~~~~~~ ~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:419:30: error: too many arguments to function 'regnode'; expected 0, have 1
+  419 |                 regtail(ret, regnode(NOTHING));         /* null. */
+      |                              ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:419:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  419 |                 regtail(ret, regnode(NOTHING));         /* null. */
+      |                 ^~~~~~~ ~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:421:17: error: too many arguments to function 'reginsert'; expected 0, have 2
+  421 |                 reginsert(PLUS, ret);
+      |                 ^~~~~~~~~
+regexp.c:167:13: note: declared here
+  167 | STATIC void reginsert();
+      |             ^~~~~~~~~
+regexp.c:424:24: error: too many arguments to function 'regnode'; expected 0, have 1
+  424 |                 next = regnode(BRANCH);                 /* Either */
+      |                        ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:425:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  425 |                 regtail(ret, next);
+      |                 ^~~~~~~ ~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:426:25: error: too many arguments to function 'regnode'; expected 0, have 1
+  426 |                 regtail(regnode(BACK), ret);            /* loop back */
+      |                         ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:426:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  426 |                 regtail(regnode(BACK), ret);            /* loop back */
+      |                 ^~~~~~~ ~~~~~~~~~~~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:427:31: error: too many arguments to function 'regnode'; expected 0, have 1
+  427 |                 regtail(next, regnode(BRANCH));         /* or */
+      |                               ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:427:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  427 |                 regtail(next, regnode(BRANCH));         /* or */
+      |                 ^~~~~~~ ~~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:428:30: error: too many arguments to function 'regnode'; expected 0, have 1
+  428 |                 regtail(ret, regnode(NOTHING));         /* null. */
+      |                              ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:428:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  428 |                 regtail(ret, regnode(NOTHING));         /* null. */
+      |                 ^~~~~~~ ~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:431:17: error: too many arguments to function 'reginsert'; expected 0, have 2
+  431 |                 reginsert(BRANCH, ret);                 /* Either x */
+      |                 ^~~~~~~~~
+regexp.c:167:13: note: declared here
+  167 | STATIC void reginsert();
+      |             ^~~~~~~~~
+regexp.c:432:30: error: too many arguments to function 'regnode'; expected 0, have 1
+  432 |                 regtail(ret, regnode(BRANCH));          /* or */
+      |                              ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:432:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  432 |                 regtail(ret, regnode(BRANCH));          /* or */
+      |                 ^~~~~~~ ~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:433:24: error: too many arguments to function 'regnode'; expected 0, have 1
+  433 |                 next = regnode(NOTHING);                /* null. */
+      |                        ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:434:17: error: too many arguments to function 'regtail'; expected 0, have 2
+  434 |                 regtail(ret, next);
+      |                 ^~~~~~~ ~~~
+regexp.c:168:13: note: declared here
+  168 | STATIC void regtail();
+      |             ^~~~~~~
+regexp.c:435:17: error: too many arguments to function 'regoptail'; expected 0, have 2
+  435 |                 regoptail(ret, next);
+      |                 ^~~~~~~~~ ~~~
+regexp.c:169:13: note: declared here
+  169 | STATIC void regoptail();
+      |             ^~~~~~~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:439:17: note: in expansion of macro 'FAIL'
+  439 |                 FAIL("nested *?+");
+      |                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c: In function 'regatom':
+regexp.c:453:1: warning: old-style function definition [-Wold-style-definition]
+  453 | regatom(flagp)
+      | ^~~~~~~
+regexp.c:463:23: error: too many arguments to function 'regnode'; expected 0, have 1
+  463 |                 ret = regnode(BOL);
+      |                       ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:466:23: error: too many arguments to function 'regnode'; expected 0, have 1
+  466 |                 ret = regnode(EOL);
+      |                       ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:469:23: error: too many arguments to function 'regnode'; expected 0, have 1
+  469 |                 ret = regnode(ANY);
+      |                       ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:477:39: error: too many arguments to function 'regnode'; expected 0, have 1
+  477 |                                 ret = regnode(ANYBUT);
+      |                                       ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:480:39: error: too many arguments to function 'regnode'; expected 0, have 1
+  480 |                                 ret = regnode(ANYOF);
+      |                                       ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:482:33: error: too many arguments to function 'regc'; expected 0, have 1
+  482 |                                 regc(*regparse++);
+      |                                 ^~~~ ~~~~~~~~~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:487:49: error: too many arguments to function 'regc'; expected 0, have 1
+  487 |                                                 regc('-');
+      |                                                 ^~~~ ~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:492:57: note: in expansion of macro 'FAIL'
+  492 |                                                         FAIL("invalid [] range");
+      |                                                         ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:494:57: error: too many arguments to function 'regc'; expected 0, have 1
+  494 |                                                         regc(class);
+      |                                                         ^~~~ ~~~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:498:41: error: too many arguments to function 'regc'; expected 0, have 1
+  498 |                                         regc(*regparse++);
+      |                                         ^~~~ ~~~~~~~~~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:500:25: error: too many arguments to function 'regc'; expected 0, have 1
+  500 |                         regc('\0');
+      |                         ^~~~ ~~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:502:33: note: in expansion of macro 'FAIL'
+  502 |                                 FAIL("unmatched []");
+      |                                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:508:23: error: too many arguments to function 'reg'; expected 0, have 2
+  508 |                 ret = reg(1, &flags);
+      |                       ^~~ ~
+regexp.c:278:1: note: declared here
+  278 | reg(paren, flagp)
+      | ^~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:516:17: note: in expansion of macro 'FAIL'
+  516 |                 FAIL("internal urp");   /* Supposed to be caught earlier. */
+      |                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:521:17: note: in expansion of macro 'FAIL'
+  521 |                 FAIL("?+* follows nothing");
+      |                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:525:25: note: in expansion of macro 'FAIL'
+  525 |                         FAIL("trailing \\");
+      |                         ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:526:23: error: too many arguments to function 'regnode'; expected 0, have 1
+  526 |                 ret = regnode(EXACTLY);
+      |                       ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:527:17: error: too many arguments to function 'regc'; expected 0, have 1
+  527 |                 regc(*regparse++);
+      |                 ^~~~ ~~~~~~~~~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:528:17: error: too many arguments to function 'regc'; expected 0, have 1
+  528 |                 regc('\0');
+      |                 ^~~~ ~~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:133:19: error: too many arguments to function 'regerror'; expected 0, have 1
+  133 | #define FAIL(m) { regerror(m); return(NULL); }
+      |                   ^~~~~~~~
+regexp.c:538:33: note: in expansion of macro 'FAIL'
+  538 |                                 FAIL("internal disaster");
+      |                                 ^~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:545:31: error: too many arguments to function 'regnode'; expected 0, have 1
+  545 |                         ret = regnode(EXACTLY);
+      |                               ^~~~~~~
+regexp.c:164:14: note: declared here
+  164 | STATIC char *regnode();
+      |              ^~~~~~~
+regexp.c:547:33: error: too many arguments to function 'regc'; expected 0, have 1
+  547 |                                 regc(*regparse++);
+      |                                 ^~~~ ~~~~~~~~~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c:550:25: error: too many arguments to function 'regc'; expected 0, have 1
+  550 |                         regc('\0');
+      |                         ^~~~ ~~~~
+regexp.c:166:13: note: declared here
+  166 | STATIC void regc();
+      |             ^~~~
+regexp.c: In function 'regnode':
+regexp.c:562:1: warning: old-style function definition [-Wold-style-definition]
+  562 | regnode(op)
+      | ^~~~~~~
+regexp.c: In function 'regc':
+regexp.c:587:1: warning: old-style function definition [-Wold-style-definition]
+  587 | regc(b)
+      | ^~~~
+regexp.c: In function 'reginsert':
+regexp.c:602:1: warning: old-style function definition [-Wold-style-definition]
+  602 | reginsert(op, opnd)
+      | ^~~~~~~~~
+regexp.c: In function 'regtail':
+regexp.c:631:1: warning: old-style function definition [-Wold-style-definition]
+  631 | regtail(p, val)
+      | ^~~~~~~
+regexp.c:645:24: error: too many arguments to function 'regnext'; expected 0, have 1
+  645 |                 temp = regnext(scan);
+      |                        ^~~~~~~ ~~~~
+regexp.c:165:14: note: declared here
+  165 | STATIC char *regnext();
+      |              ^~~~~~~
+regexp.c: In function 'regoptail':
+regexp.c:663:1: warning: old-style function definition [-Wold-style-definition]
+  663 | regoptail(p, val)
+      | ^~~~~~~~~
+regexp.c:670:9: error: too many arguments to function 'regtail'; expected 0, have 2
+  670 |         regtail(OPERAND(p), val);
+      |         ^~~~~~~
+regexp.c:631:1: note: declared here
+  631 | regtail(p, val)
+      | ^~~~~~~
+regexp.c: In function 'regexec':
+regexp.c:702:1: warning: old-style function definition [-Wold-style-definition]
+  702 | regexec(prog, string)
+      | ^~~~~~~
+regexp.c:705:1: error: number of arguments doesn't match prototype
+  705 | {
+      | ^
+regexp.h:20:12: error: prototype declaration
+   20 | extern int regexec();
+      |            ^~~~~~~
+regexp.c:710:17: error: too many arguments to function 'regerror'; expected 0, have 1
+  710 |                 regerror("NULL parameter");
+      |                 ^~~~~~~~ ~~~~~~~~~~~~~~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:716:17: error: too many arguments to function 'regerror'; expected 0, have 1
+  716 |                 regerror("corrupted program");
+      |                 ^~~~~~~~ ~~~~~~~~~~~~~~~~~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:737:24: error: too many arguments to function 'regtry'; expected 0, have 2
+  737 |                 return(regtry(prog, string));
+      |                        ^~~~~~ ~~~~
+regexp.c:688:12: note: declared here
+  688 | STATIC int regtry();
+      |            ^~~~~~
+regexp.c:744:29: error: too many arguments to function 'regtry'; expected 0, have 2
+  744 |                         if (regtry(prog, s))
+      |                             ^~~~~~ ~~~~
+regexp.c:688:12: note: declared here
+  688 | STATIC int regtry();
+      |            ^~~~~~
+regexp.c:751:29: error: too many arguments to function 'regtry'; expected 0, have 2
+  751 |                         if (regtry(prog, s))
+      |                             ^~~~~~ ~~~~
+regexp.c:688:12: note: declared here
+  688 | STATIC int regtry();
+      |            ^~~~~~
+regexp.c: In function 'regtry':
+regexp.c:763:1: warning: old-style function definition [-Wold-style-definition]
+  763 | regtry(prog, string)
+      | ^~~~~~
+regexp.c:781:13: error: too many arguments to function 'regmatch'; expected 0, have 1
+  781 |         if (regmatch(prog->program + 1)) {
+      |             ^~~~~~~~ ~~~~~~~~~~~~~~~~~
+regexp.c:689:12: note: declared here
+  689 | STATIC int regmatch();
+      |            ^~~~~~~~
+regexp.c: In function 'regmatch':
+regexp.c:800:1: warning: old-style function definition [-Wold-style-definition]
+  800 | regmatch(prog)
+      | ^~~~~~~~
+regexp.c:816:24: error: too many arguments to function 'regnext'; expected 0, have 1
+  816 |                 next = regnext(scan);
+      |                        ^~~~~~~ ~~~~
+regexp.c:165:14: note: declared here
+  165 | STATIC char *regnext();
+      |              ^~~~~~~
+regexp.c:875:37: error: too many arguments to function 'regmatch'; expected 0, have 1
+  875 |                                 if (regmatch(next)) {
+      |                                     ^~~~~~~~ ~~~~
+regexp.c:800:1: note: declared here
+  800 | regmatch(prog)
+      | ^~~~~~~~
+regexp.c:903:37: error: too many arguments to function 'regmatch'; expected 0, have 1
+  903 |                                 if (regmatch(next)) {
+      |                                     ^~~~~~~~ ~~~~
+regexp.c:800:1: note: declared here
+  800 | regmatch(prog)
+      | ^~~~~~~~
+regexp.c:924:53: error: too many arguments to function 'regmatch'; expected 0, have 1
+  924 |                                                 if (regmatch(OPERAND(scan)))
+      |                                                     ^~~~~~~~
+regexp.c:800:1: note: declared here
+  800 | regmatch(prog)
+      | ^~~~~~~~
+regexp.c:927:56: error: too many arguments to function 'regnext'; expected 0, have 1
+  927 |                                                 scan = regnext(scan);
+      |                                                        ^~~~~~~ ~~~~
+regexp.c:165:14: note: declared here
+  165 | STATIC char *regnext();
+      |              ^~~~~~~
+regexp.c:950:38: error: too many arguments to function 'regrepeat'; expected 0, have 1
+  950 |                                 no = regrepeat(OPERAND(scan));
+      |                                      ^~~~~~~~~
+regexp.c:690:12: note: declared here
+  690 | STATIC int regrepeat();
+      |            ^~~~~~~~~
+regexp.c:954:53: error: too many arguments to function 'regmatch'; expected 0, have 1
+  954 |                                                 if (regmatch(next))
+      |                                                     ^~~~~~~~ ~~~~
+regexp.c:800:1: note: declared here
+  800 | regmatch(prog)
+      | ^~~~~~~~
+regexp.c:967:25: error: too many arguments to function 'regerror'; expected 0, have 1
+  967 |                         regerror("memory corruption");
+      |                         ^~~~~~~~ ~~~~~~~~~~~~~~~~~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c:979:9: error: too many arguments to function 'regerror'; expected 0, have 1
+  979 |         regerror("corrupted pointers");
+      |         ^~~~~~~~ ~~~~~~~~~~~~~~~~~~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c: In function 'regrepeat':
+regexp.c:987:1: warning: old-style function definition [-Wold-style-definition]
+  987 | regrepeat(p)
+      | ^~~~~~~~~
+regexp.c:1020:17: error: too many arguments to function 'regerror'; expected 0, have 1
+ 1020 |                 regerror("internal foulup");
+      |                 ^~~~~~~~ ~~~~~~~~~~~~~~~~~
+regexp.h:22:13: note: declared here
+   22 | extern void regerror();
+      |             ^~~~~~~~
+regexp.c: In function 'regnext':
+regexp.c:1033:1: warning: old-style function definition [-Wold-style-definition]
+ 1033 | regnext(p)
+      | ^~~~~~~
+make[1]: *** [Makefile:1081: regexp.o] Error 1
+make[1]: Leaving directory '/home/*******/Downloads/xfm-1.4.3/regexp'
+make: *** [Makefile:1077: all] Error 2

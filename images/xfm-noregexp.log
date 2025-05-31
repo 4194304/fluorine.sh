@@ -1,0 +1,576 @@
+making all in ./src...
+make[1]: Entering directory '/home/*******/Downloads/xfm-1.4.3-noregexp/src'
+make[1]: warning: -j16 forced in submake: resetting jobserver mode.
+gcc -O2 -Wall -Wno-parentheses     -I/usr/X11R6/include/X11/Xaw3d -I../regexp -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				  -DFUNCPROTO=15 -DNARROWPROTO   -DXPM -DXAW3D -DMAGIC_HEADERS -DENHANCE_BUGFIX -DUSE_NEW_WIDGETS -DENHANCE_3DICONS -DENHANCE_TXT_FIELD -DENHANCE_POP_ACCEL -DENHANCE_HISTORY -DENHANCE_USERINFO -DENHANCE_MENU -DENHANCE_TRANSLATIONS -DENHANCE_PERMS -DENHANCE_SCROLL -DENHANCE_CURSOR -DENHANCE_SELECTION -DENHANCE_LOG -DENHANCE_CMAP -DVIEWPORT_HACK    -c -o FmMain.o FmMain.c
+gcc -O2 -Wall -Wno-parentheses     -I/usr/X11R6/include/X11/Xaw3d -I../regexp -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				  -DFUNCPROTO=15 -DNARROWPROTO   -DXPM -DXAW3D -DMAGIC_HEADERS -DENHANCE_BUGFIX -DUSE_NEW_WIDGETS -DENHANCE_3DICONS -DENHANCE_TXT_FIELD -DENHANCE_POP_ACCEL -DENHANCE_HISTORY -DENHANCE_USERINFO -DENHANCE_MENU -DENHANCE_TRANSLATIONS -DENHANCE_PERMS -DENHANCE_SCROLL -DENHANCE_CURSOR -DENHANCE_SELECTION -DENHANCE_LOG -DENHANCE_CMAP -DVIEWPORT_HACK    -c -o FmFw.o FmFw.c
+gcc -O2 -Wall -Wno-parentheses     -I/usr/X11R6/include/X11/Xaw3d -I../regexp -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				  -DFUNCPROTO=15 -DNARROWPROTO   -DXPM -DXAW3D -DMAGIC_HEADERS -DENHANCE_BUGFIX -DUSE_NEW_WIDGETS -DENHANCE_3DICONS -DENHANCE_TXT_FIELD -DENHANCE_POP_ACCEL -DENHANCE_HISTORY -DENHANCE_USERINFO -DENHANCE_MENU -DENHANCE_TRANSLATIONS -DENHANCE_PERMS -DENHANCE_SCROLL -DENHANCE_CURSOR -DENHANCE_SELECTION -DENHANCE_LOG -DENHANCE_CMAP -DVIEWPORT_HACK    -c -o FmErrors.o FmErrors.c
+gcc -O2 -Wall -Wno-parentheses     -I/usr/X11R6/include/X11/Xaw3d -I../regexp -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				  -DFUNCPROTO=15 -DNARROWPROTO   -DXPM -DXAW3D -DMAGIC_HEADERS -DENHANCE_BUGFIX -DUSE_NEW_WIDGETS -DENHANCE_3DICONS -DENHANCE_TXT_FIELD -DENHANCE_POP_ACCEL -DENHANCE_HISTORY -DENHANCE_USERINFO -DENHANCE_MENU -DENHANCE_TRANSLATIONS -DENHANCE_PERMS -DENHANCE_SCROLL -DENHANCE_CURSOR -DENHANCE_SELECTION -DENHANCE_LOG -DENHANCE_CMAP -DVIEWPORT_HACK    -c -o FmExec.o FmExec.c
+gcc -O2 -Wall -Wno-parentheses     -I/usr/X11R6/include/X11/Xaw3d -I../regexp -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				  -DFUNCPROTO=15 -DNARROWPROTO   -DXPM -DXAW3D -DMAGIC_HEADERS -DENHANCE_BUGFIX -DUSE_NEW_WIDGETS -DENHANCE_3DICONS -DENHANCE_TXT_FIELD -DENHANCE_POP_ACCEL -DENHANCE_HISTORY -DENHANCE_USERINFO -DENHANCE_MENU -DENHANCE_TRANSLATIONS -DENHANCE_PERMS -DENHANCE_SCROLL -DENHANCE_CURSOR -DENHANCE_SELECTION -DENHANCE_LOG -DENHANCE_CMAP -DVIEWPORT_HACK    -c -o magic.o magic.c
+gcc -O2 -Wall -Wno-parentheses     -I/usr/X11R6/include/X11/Xaw3d -I../regexp -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				  -DFUNCPROTO=15 -DNARROWPROTO   -DXPM -DXAW3D -DMAGIC_HEADERS -DENHANCE_BUGFIX -DUSE_NEW_WIDGETS -DENHANCE_3DICONS -DENHANCE_TXT_FIELD -DENHANCE_POP_ACCEL -DENHANCE_HISTORY -DENHANCE_USERINFO -DENHANCE_MENU -DENHANCE_TRANSLATIONS -DENHANCE_PERMS -DENHANCE_SCROLL -DENHANCE_CURSOR -DENHANCE_SELECTION -DENHANCE_LOG -DENHANCE_CMAP -DVIEWPORT_HACK    -c -o TextField.o TextField.c
+gcc -O2 -Wall -Wno-parentheses     -I/usr/X11R6/include/X11/Xaw3d -I../regexp -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				  -DFUNCPROTO=15 -DNARROWPROTO   -DXPM -DXAW3D -DMAGIC_HEADERS -DENHANCE_BUGFIX -DUSE_NEW_WIDGETS -DENHANCE_3DICONS -DENHANCE_TXT_FIELD -DENHANCE_POP_ACCEL -DENHANCE_HISTORY -DENHANCE_USERINFO -DENHANCE_MENU -DENHANCE_TRANSLATIONS -DENHANCE_PERMS -DENHANCE_SCROLL -DENHANCE_CURSOR -DENHANCE_SELECTION -DENHANCE_LOG -DENHANCE_CMAP -DVIEWPORT_HACK    -c -o FocusForm.o FocusForm.c
+gcc -O2 -Wall -Wno-parentheses     -I/usr/X11R6/include/X11/Xaw3d -I../regexp -I/usr/include    -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				  -DFUNCPROTO=15 -DNARROWPROTO   -DXPM -DXAW3D -DMAGIC_HEADERS -DENHANCE_BUGFIX -DUSE_NEW_WIDGETS -DENHANCE_3DICONS -DENHANCE_TXT_FIELD -DENHANCE_POP_ACCEL -DENHANCE_HISTORY -DENHANCE_USERINFO -DENHANCE_MENU -DENHANCE_TRANSLATIONS -DENHANCE_PERMS -DENHANCE_SCROLL -DENHANCE_CURSOR -DENHANCE_SELECTION -DENHANCE_LOG -DENHANCE_CMAP -DVIEWPORT_HACK    -c -o IconFileList.o IconFileList.c
+make[1]: *** No rule to make target '../regexp/libregexp.a', needed by 'xfm'.  Stop.
+make[1]: *** Waiting for unfinished jobs....
+In file included from /usr/include/pwd.h:25,
+                 from FmFw.c:18:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+In file included from /usr/include/errno.h:25,
+                 from FmErrors.c:10:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdio.h:28,
+                 from FmExec.c:11:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdio.h:28,
+                 from FmMain.c:16:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdio.h:28,
+                 from magic.c:10:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from TextField.c:123:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+In file included from /usr/include/sys/types.h:25,
+                 from IconFileList.c:22:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+In file included from /usr/include/sys/types.h:25,
+                 from /usr/include/X11/Xlib.h:38,
+                 from /usr/include/X11/Intrinsic.h:53,
+                 from /usr/include/X11/IntrinsicP.h:51,
+                 from FocusForm.c:65:
+/usr/include/features.h:199:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  199 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+magic.c: In function 'magic_parse_file':
+magic.c:47:6: warning: old-style function definition [-Wold-style-definition]
+   47 | void magic_parse_file(name)
+      |      ^~~~~~~~~~~~~~~~
+magic.c:121:20: error: too many arguments to function 'parse_string'; expected 0, have 1
+  121 |             sptr = parse_string(&cptr);
+      |                    ^~~~~~~~~~~~ ~~~~~
+magic.c:45:16: note: declared here
+   45 | static char   *parse_string();
+      |                ^~~~~~~~~~~~
+magic.c:135:20: error: too many arguments to function 'parse_string'; expected 0, have 1
+  135 |             sptr = parse_string(&cptr);
+      |                    ^~~~~~~~~~~~ ~~~~~
+magic.c:45:16: note: declared here
+   45 | static char   *parse_string();
+      |                ^~~~~~~~~~~~
+magic.c:156:20: error: too many arguments to function 'parse_string'; expected 0, have 1
+  156 |             sptr = parse_string(&cptr);
+      |                    ^~~~~~~~~~~~ ~~~~~
+magic.c:45:16: note: declared here
+   45 | static char   *parse_string();
+      |                ^~~~~~~~~~~~
+magic.c:157:40: error: too many arguments to function 'regcomp'; expected 0, have 1
+  157 |             mtypes[count].value.expr = regcomp(sptr);
+      |                                        ^~~~~~~ ~~~~
+In file included from magic.h:11,
+                 from magic.c:18:
+/usr/include/regexp.h:19:16: note: declared here
+   19 | extern regexp *regcomp();
+      |                ^~~~~~~
+magic.c: In function 'magic_get_type':
+magic.c:261:6: warning: old-style function definition [-Wold-style-definition]
+  261 | void magic_get_type(name, buf)
+      |      ^~~~~~~~~~~~~~
+magic.c:319:12: error: too many arguments to function 'mmatch'; expected 0, have 2
+  319 |         if(mmatch(i, buf))
+      |            ^~~~~~ ~
+magic.c:42:16: note: declared here
+   42 | static int     mmatch();
+      |                ^~~~~~
+magic.c:332:24: error: too many arguments to function 'mmatch'; expected 0, have 2
+  332 |                     if(mmatch(i, nbuf) && nbuf[0] != '\0')
+      |                        ^~~~~~ ~
+magic.c:42:16: note: declared here
+   42 | static int     mmatch();
+      |                ^~~~~~
+magic.c: In function 'mmatch':
+magic.c:350:12: warning: old-style function definition [-Wold-style-definition]
+  350 | static int mmatch(i, buf)
+      |            ^~~~~~
+magic.c:401:12: error: too many arguments to function 'regexec'; expected 0, have 2
+  401 |         if(regexec(prog , h))
+      |            ^~~~~~~ ~~~~
+/usr/include/regexp.h:20:12: note: declared here
+   20 | extern int regexec();
+      |            ^~~~~~~
+magic.c:403:13: error: too many arguments to function 'regsub'; expected 0, have 3
+  403 |             regsub(prog, mtypes[i].message, buf);
+      |             ^~~~~~ ~~~~
+/usr/include/regexp.h:21:13: note: declared here
+   21 | extern void regsub();
+      |             ^~~~~~
+magic.c: In function 'parse_string':
+magic.c:526:14: warning: old-style function definition [-Wold-style-definition]
+  526 | static char *parse_string(s)
+      |              ^~~~~~~~~~~~
+make[1]: *** [<builtin>: magic.o] Error 1
+FmExec.c: In function 'executeApplication':
+FmExec.c:135:7: error: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+  135 |       exit(1);
+      |       ^~~~
+FmExec.c:19:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
+   18 | #include "Am.h"
+  +++ |+#include <stdlib.h>
+   19 | #include "Fm.h"
+FmExec.c:135:7: warning: incompatible implicit declaration of built-in function 'exit' [-Wbuiltin-declaration-mismatch]
+  135 |       exit(1);
+      |       ^~~~
+FmExec.c:135:7: note: include '<stdlib.h>' or provide a declaration of 'exit'
+TextField.c:195:13: error: conflicting types for 'strtol'; have 'long int(void)'
+  195 | extern long strtol();
+      |             ^~~~~~
+In file included from /usr/include/features.h:524:
+/usr/include/stdlib.h:215:17: note: previous declaration of 'strtol' with type 'long int(const char * restrict,  char ** restrict,  int)'
+  215 | extern long int __REDIRECT_NTH (strtol, (const char *__restrict __nptr,
+      |                 ^~~~~~~~~~~~~~
+FocusForm.c:116:19: error: initialization of 'void (*)(struct _WidgetRec *, XEvent *, char **, Cardinal *)' {aka 'void (*)(struct _WidgetRec *, XEvent *, char **, unsigned int *)'} from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  116 |  {"FocusTraverse",FocusTraverse},
+      |                   ^~~~~~~~~~~~~
+FocusForm.c:116:19: note: (near initialization for 'actions[0].proc')
+FocusForm.c:93:17: note: 'FocusTraverse' declared here
+   93 | static void     FocusTraverse();
+      |                 ^~~~~~~~~~~~~
+FocusForm.c:117:14: error: initialization of 'void (*)(struct _WidgetRec *, XEvent *, char **, Cardinal *)' {aka 'void (*)(struct _WidgetRec *, XEvent *, char **, unsigned int *)'} from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  117 |  {"FocusSet",FocusSet},
+      |              ^~~~~~~~
+FocusForm.c:117:14: note: (near initialization for 'actions[1].proc')
+FocusForm.c:94:17: note: 'FocusSet' declared here
+   94 | static void     FocusSet();
+      |                 ^~~~~~~~
+FocusForm.c:118:27: error: initialization of 'void (*)(struct _WidgetRec *, XEvent *, char **, Cardinal *)' {aka 'void (*)(struct _WidgetRec *, XEvent *, char **, unsigned int *)'} from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  118 |  {"Detail_NotifyAncestor",Detail_NotifyAncestor},
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+FocusForm.c:118:27: note: (near initialization for 'actions[2].proc')
+FocusForm.c:95:17: note: 'Detail_NotifyAncestor' declared here
+   95 | static void     Detail_NotifyAncestor();
+      |                 ^~~~~~~~~~~~~~~~~~~~~
+FocusForm.c:173:33: error: initialization of 'void (*)(struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, Cardinal *)' {aka 'void (*)(struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, unsigned int *)'} from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  173 |     /* initialize         */    Initialize,
+      |                                 ^~~~~~~~~~
+FocusForm.c:173:33: note: (near initialization for 'focusFormClassRec.core_class.initialize')
+FocusForm.c:85:17: note: 'Initialize' declared here
+   85 | static void     Initialize();
+      |                 ^~~~~~~~~~
+FocusForm.c:175:33: error: initialization of 'void (*)(struct _WidgetRec *, XtValueMask *, XSetWindowAttributes *)' {aka 'void (*)(struct _WidgetRec *, long unsigned int *, XSetWindowAttributes *)'} from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  175 |     /* realize            */    Realize,
+      |                                 ^~~~~~~
+FocusForm.c:175:33: note: (near initialization for 'focusFormClassRec.core_class.realize')
+FocusForm.c:89:17: note: 'Realize' declared here
+   89 | static void     Realize();
+      |                 ^~~~~~~
+FocusForm.c:185:33: error: initialization of 'void (*)(struct _WidgetRec *)' from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  185 |     /* destroy            */    Destroy,
+      |                                 ^~~~~~~
+FocusForm.c:185:33: note: (near initialization for 'focusFormClassRec.core_class.destroy')
+FocusForm.c:90:17: note: 'Destroy' declared here
+   90 | static void     Destroy();
+      |                 ^~~~~~~
+FocusForm.c:202:32: error: initialization of 'void (*)(struct _WidgetRec *)' from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  202 |     /* change_managed     */   ChangeManaged,
+      |                                ^~~~~~~~~~~~~
+FocusForm.c:202:32: note: (near initialization for 'focusFormClassRec.composite_class.change_managed')
+FocusForm.c:88:17: note: 'ChangeManaged' declared here
+   88 | static void     ChangeManaged();
+      |                 ^~~~~~~~~~~~~
+FocusForm.c:211:32: error: initialization of 'void (*)(struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, Cardinal *)' {aka 'void (*)(struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, unsigned int *)'} from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  211 |     /* initialize         */   ConstraintInitialize,
+      |                                ^~~~~~~~~~~~~~~~~~~~
+FocusForm.c:211:32: note: (near initialization for 'focusFormClassRec.constraint_class.initialize')
+FocusForm.c:87:17: note: 'ConstraintInitialize' declared here
+   87 | static void     ConstraintInitialize();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+FocusForm.c:213:32: error: initialization of 'Boolean (*)(struct _WidgetRec *, struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, Cardinal *)' {aka 'char (*)(struct _WidgetRec *, struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, unsigned int *)'} from incompatible pointer type 'Boolean (*)(void)' {aka 'char (*)(void)'} [-Wincompatible-pointer-types]
+  213 |     /* set_values         */   ConstraintSetVals,
+      |                                ^~~~~~~~~~~~~~~~~
+FocusForm.c:213:32: note: (near initialization for 'focusFormClassRec.constraint_class.set_values')
+FocusForm.c:86:17: note: 'ConstraintSetVals' declared here
+   86 | static Boolean  ConstraintSetVals();
+      |                 ^~~~~~~~~~~~~~~~~
+FocusForm.c: In function 'Initialize':
+FocusForm.c:224:13: warning: old-style function definition [-Wold-style-definition]
+  224 | static void Initialize(treq,tnew,args,narg)
+      |             ^~~~~~~~~~
+FocusForm.c:233:49: error: passing argument 4 of 'XtAddEventHandler' from incompatible pointer type [-Wincompatible-pointer-types]
+  233 |    XtAddEventHandler(tnew,LeaveWindowMask,False,RevertFocus,0);
+      |                                                 ^~~~~~~~~~~
+      |                                                 |
+      |                                                 void (*)(void)
+/usr/include/X11/Intrinsic.h:849:5: note: expected 'XtEventHandler' {aka 'void (*)(struct _WidgetRec *, void *, XEvent *, char *)'} but argument is of type 'void (*)(void)'
+  849 |     XtEventHandler      /* proc */,
+      |     ^~~~~~~~~~~~~~
+FocusForm.c:98:17: note: 'RevertFocus' declared here
+   98 | static void     RevertFocus();
+      |                 ^~~~~~~~~~~
+/usr/include/X11/Intrinsic.h:302:16: note: 'XtEventHandler' declared here
+  302 | typedef void (*XtEventHandler)(
+      |                ^~~~~~~~~~~~~~
+FocusForm.c: In function 'ConstraintInitialize':
+FocusForm.c:236:13: warning: old-style function definition [-Wold-style-definition]
+  236 | static void ConstraintInitialize(treq,tnew)
+      |             ^~~~~~~~~~~~~~~~~~~~
+FocusForm.c: In function 'ConstraintSetVals':
+FocusForm.c:243:16: warning: old-style function definition [-Wold-style-definition]
+  243 | static Boolean ConstraintSetVals(current,request,new,args,narg)
+      |                ^~~~~~~~~~~~~~~~~
+FocusForm.c:256:23: error: too many arguments to function 'FocusTraverse'; expected 0, have 4
+  256 |         loose_focus ) FocusTraverse(XtParent(current),0,0,&dummy);
+      |                       ^~~~~~~~~~~~~ ~~~~~~~~
+FocusForm.c:93:17: note: declared here
+   93 | static void     FocusTraverse();
+      |                 ^~~~~~~~~~~~~
+FocusForm.c: In function 'Destroy':
+FocusForm.c:266:13: warning: old-style function definition [-Wold-style-definition]
+  266 | static void Destroy(w)
+      |             ^~~~~~~
+FocusForm.c:269:47: error: passing argument 4 of 'XtRemoveEventHandler' from incompatible pointer type [-Wincompatible-pointer-types]
+  269 |  XtRemoveEventHandler(w,LeaveWindowMask,False,RevertFocus,0);
+      |                                               ^~~~~~~~~~~
+      |                                               |
+      |                                               void (*)(void)
+/usr/include/X11/Intrinsic.h:857:5: note: expected 'XtEventHandler' {aka 'void (*)(struct _WidgetRec *, void *, XEvent *, char *)'} but argument is of type 'void (*)(void)'
+  857 |     XtEventHandler      /* proc */,
+      |     ^~~~~~~~~~~~~~
+FocusForm.c:98:17: note: 'RevertFocus' declared here
+   98 | static void     RevertFocus();
+      |                 ^~~~~~~~~~~
+/usr/include/X11/Intrinsic.h:302:16: note: 'XtEventHandler' declared here
+  302 | typedef void (*XtEventHandler)(
+      |                ^~~~~~~~~~~~~~
+FocusForm.c: In function 'Realize':
+FocusForm.c:272:13: warning: old-style function definition [-Wold-style-definition]
+  272 | static void Realize(w,vm,wa)
+      |             ^~~~~~~
+FocusForm.c:281:6: error: too many arguments to function 'FindFocusFormAncestor'; expected 0, have 1
+  281 | if (!FindFocusFormAncestor(w)) {
+      |      ^~~~~~~~~~~~~~~~~~~~~ ~
+FocusForm.c:105:17: note: declared here
+  105 | static Widget   FindFocusFormAncestor();
+      |                 ^~~~~~~~~~~~~~~~~~~~~
+TextField.c:678:41: error: initialization of 'void (*)(struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, Cardinal *)' {aka 'void (*)(struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, unsigned int *)'} from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  678 |     /* initialize               */      Initialize,
+      |                                         ^~~~~~~~~~
+TextField.c:678:41: note: (near initialization for 'textFieldClassRec.core_class.initialize')
+TextField.c:634:13: note: 'Initialize' declared here
+  634 | static void Initialize();
+      |             ^~~~~~~~~~
+FocusForm.c: In function 'ChangeManaged':
+FocusForm.c:290:13: warning: old-style function definition [-Wold-style-definition]
+  290 | static void ChangeManaged(w)
+      |             ^~~~~~~~~~~~~
+TextField.c:690:41: error: initialization of 'void (*)(struct _WidgetRec *)' from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  690 |     /* destroy                  */      Destroy,
+      |                                         ^~~~~~~
+TextField.c:690:41: note: (near initialization for 'textFieldClassRec.core_class.destroy')
+TextField.c:635:13: note: 'Destroy' declared here
+  635 | static void Destroy();
+      |             ^~~~~~~
+TextField.c:691:41: error: initialization of 'void (*)(struct _WidgetRec *)' from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  691 |     /* resize                   */      Resize,
+      |                                         ^~~~~~
+TextField.c:691:41: note: (near initialization for 'textFieldClassRec.core_class.resize')
+TextField.c:637:13: note: 'Resize' declared here
+  637 | static void Resize();
+      |             ^~~~~~
+TextField.c:692:41: error: initialization of 'void (*)(struct _WidgetRec *, XEvent *, struct _XRegion *)' from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  692 |     /* expose                   */      TfwExpose,
+      |                                         ^~~~~~~~~
+TextField.c:692:41: note: (near initialization for 'textFieldClassRec.core_class.expose')
+TextField.c:636:13: note: 'TfwExpose' declared here
+  636 | static void TfwExpose();
+      |             ^~~~~~~~~
+TextField.c:693:41: error: initialization of 'Boolean (*)(struct _WidgetRec *, struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, Cardinal *)' {aka 'char (*)(struct _WidgetRec *, struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, unsigned int *)'} from incompatible pointer type 'Boolean (*)(void)' {aka 'char (*)(void)'} [-Wincompatible-pointer-types]
+  693 |     /* set_values               */      SetValues,
+      |                                         ^~~~~~~~~
+TextField.c:693:41: note: (near initialization for 'textFieldClassRec.core_class.set_values')
+TextField.c:638:16: note: 'SetValues' declared here
+  638 | static Boolean SetValues();
+      |                ^~~~~~~~~
+FocusForm.c:325:11: error: too many arguments to function 'FindCompositeChild'; expected 0, have 2
+  325 | focus_num=FindCompositeChild(w,ffw->focusForm.focus_child);
+      |           ^~~~~~~~~~~~~~~~~~ ~
+make[1]: *** [<builtin>: FmExec.o] Error 1
+FocusForm.c:101:17: note: declared here
+  101 | static int      FindCompositeChild();
+      |                 ^~~~~~~~~~~~~~~~~~
+IconFileList.c: In function 'ilInitialize':
+TextField.c:697:41: error: initialization of 'Boolean (*)(struct _WidgetRec *, Time *)' {aka 'char (*)(struct _WidgetRec *, long unsigned int *)'} from incompatible pointer type 'Boolean (*)(void)' {aka 'char (*)(void)'} [-Wincompatible-pointer-types]
+  697 |     /* accept_focus             */      AcceptFocus,
+      |                                         ^~~~~~~~~~~
+TextField.c:697:41: note: (near initialization for 'textFieldClassRec.core_class.accept_focus')
+IconFileList.c:134:13: warning: old-style function definition [-Wold-style-definition]
+  134 | static void ilInitialize(treq,tnew,args,n_args)
+      |             ^~~~~~~~~~~~
+TextField.c:640:16: note: 'AcceptFocus' declared here
+  640 | static Boolean AcceptFocus();
+      |                ^~~~~~~~~~~
+FocusForm.c:328:9: error: too many arguments to function 'FocusTraverse'; expected 0, have 4
+  328 |         FocusTraverse(w,0,0,&narg);
+      |         ^~~~~~~~~~~~~ ~
+FocusForm.c:93:17: note: declared here
+   93 | static void     FocusTraverse();
+      |                 ^~~~~~~~~~~~~
+TextField.c:701:41: error: initialization of 'XtGeometryResult (*)(struct _WidgetRec *, XtWidgetGeometry *, XtWidgetGeometry *)' from incompatible pointer type 'XtGeometryResult (*)(void)' [-Wincompatible-pointer-types]
+  701 |     /* query_geometry           */      QueryGeometry,
+      |                                         ^~~~~~~~~~~~~
+TextField.c:701:41: note: (near initialization for 'textFieldClassRec.core_class.query_geometry')
+TextField.c:639:25: note: 'QueryGeometry' declared here
+  639 | static XtGeometryResult QueryGeometry();
+      |                         ^~~~~~~~~~~~~
+FocusForm.c: In function 'Detail_NotifyAncestor':
+FocusForm.c:351:13: warning: old-style function definition [-Wold-style-definition]
+  351 | static void Detail_NotifyAncestor(w,ev,args,nargs)
+      |             ^~~~~~~~~~~~~~~~~~~~~
+TextField.c:710:41: error: initialization of 'void (*)(struct _WidgetRec *, XEvent *, struct _XRegion *, XtRelief,  Boolean)' {aka 'void (*)(struct _WidgetRec *, XEvent *, struct _XRegion *, XtRelief,  char)'} from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  710 |     /* shadowdraw       */              (void(*)())TfwDrawShadows
+      |                                         ^
+TextField.c:710:41: note: (near initialization for 'textFieldClassRec.threeD_class.shadowdraw')
+FocusForm.c: In function 'FocusSet':
+FocusForm.c:376:13: warning: old-style function definition [-Wold-style-definition]
+  376 | static void FocusSet(w,ev,args,nargs)
+      |             ^~~~~~~~
+FocusForm.c:397:6: error: too many arguments to function 'CanSetFocus'; expected 0, have 1
+  397 | if (!CanSetFocus(new_focus_widget)) return;
+      |      ^~~~~~~~~~~ ~~~~~~~~~~~~~~~~
+FmMain.c: In function 'main':
+FmMain.c:574:22: error: assignment to '__sighandler_t' {aka 'void (*)(int)'} from incompatible pointer type 'void (*)(void)' [-Wincompatible-pointer-types]
+  574 |   sigterm.sa_handler = quit;
+      |                      ^
+FocusForm.c:106:17: note: declared here
+  106 | static Boolean  CanSetFocus();
+      |                 ^~~~~~~~~~~
+In file included from Am.h:11,
+                 from FmMain.c:43:
+Fm.h:489:6: note: 'quit' declared here
+  489 | void quit();
+      |      ^~~~
+In file included from FmMain.c:18:
+/usr/include/signal.h:72:16: note: '__sighandler_t' declared here
+   72 | typedef void (*__sighandler_t) (int);
+      |                ^~~~~~~~~~~~~~
+FocusForm.c:410:20: error: too many arguments to function 'FindFocusFormAncestor'; expected 0, have 1
+  410 |   while (0!=(tmpw1=FindFocusFormAncestor(tmpw) )) {
+      |                    ^~~~~~~~~~~~~~~~~~~~~ ~~~~
+FocusForm.c:105:17: note: declared here
+  105 | static Widget   FindFocusFormAncestor();
+      |                 ^~~~~~~~~~~~~~~~~~~~~
+FocusForm.c: In function 'FocusTraverse':
+FocusForm.c:423:13: warning: old-style function definition [-Wold-style-definition]
+  423 | static void FocusTraverse(w,ev,args,nargs)
+      |             ^~~~~~~~~~~~~
+FocusForm.c:436:6: error: too many arguments to function 'CanSetFocus'; expected 0, have 1
+  436 | if (!CanSetFocus(w)) return;
+      |      ^~~~~~~~~~~ ~
+FocusForm.c:106:17: note: declared here
+  106 | static Boolean  CanSetFocus();
+      |                 ^~~~~~~~~~~
+FmErrors.c: In function 'sysError':
+FmErrors.c:170:42: error: 'sys_errlist' undeclared (first use in this function)
+  170 |   XtVaSetValues(errors.label2, XtNlabel, sys_errlist[errno], NULL);
+      |                                          ^~~~~~~~~~~
+FmErrors.c:170:42: note: each undeclared identifier is reported only once for each function it appears in
+FmMain.c:658:17: warning: missing sentinel in function call [-Wformat=]
+  658 |                 0);
+      |                 ^
+FocusForm.c:464:11: error: too many arguments to function 'FindCompositeChild'; expected 0, have 2
+  464 | new_focus=FindCompositeChild(comp,old_focus_widget);
+      |           ^~~~~~~~~~~~~~~~~~ ~~~~
+FocusForm.c:101:17: note: declared here
+  101 | static int      FindCompositeChild();
+      |                 ^~~~~~~~~~~~~~~~~~
+FmErrors.c: In function 'abortXfm':
+FmErrors.c:192:3: error: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+  192 |   exit(1);
+      |   ^~~~
+FmErrors.c:20:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
+   19 | #include "Am.h"
+  +++ |+#include <stdlib.h>
+   20 | #include "Fm.h"
+FmErrors.c:192:3: warning: incompatible implicit declaration of built-in function 'exit' [-Wbuiltin-declaration-mismatch]
+  192 |   exit(1);
+      |   ^~~~
+FmErrors.c:192:3: note: include '<stdlib.h>' or provide a declaration of 'exit'
+FocusForm.c: In function 'FindCompositeChild':
+FocusForm.c:497:12: warning: old-style function definition [-Wold-style-definition]
+  497 | static int FindCompositeChild(parent,wid)
+      |            ^~~~~~~~~~~~~~~~~~
+FocusForm.c: In function 'FindFocusFormAncestor':
+FocusForm.c:528:15: warning: old-style function definition [-Wold-style-definition]
+  528 | static Widget FindFocusFormAncestor(widget)
+      |               ^~~~~~~~~~~~~~~~~~~~~
+FocusForm.c: In function 'CanSetFocus':
+FocusForm.c:537:16: warning: old-style function definition [-Wold-style-definition]
+  537 | static Boolean CanSetFocus(w)
+      |                ^~~~~~~~~~~
+FocusForm.c: In function 'RevertFocus':
+FocusForm.c:556:13: warning: old-style function definition [-Wold-style-definition]
+  556 | static void RevertFocus(wid,cld,ev,ctd)
+      |             ^~~~~~~~~~~
+make[1]: *** [<builtin>: FmErrors.o] Error 1
+make[1]: *** [<builtin>: FmMain.o] Error 1
+make[1]: *** [<builtin>: FocusForm.o] Error 1
+TextField.c: In function 'MoveCursor':
+TextField.c:1660:78: error: too many arguments to function 'strtol'; expected 0, have 3
+ 1660 |                                                 default:        shift=(int) (strtol(args[0],&chpt,10));
+      |                                                                              ^~~~~~ ~~~~~~~
+TextField.c:195:13: note: declared here
+  195 | extern long strtol();
+      |             ^~~~~~
+FmFw.c: In function 'devAction':
+FmFw.c:761:5: error: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+  761 |     exit(1);
+      |     ^~~~
+FmFw.c:65:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
+   64 | #include "FmLog.h"
+  +++ |+#include <stdlib.h>
+   65 | #endif
+FmFw.c:761:5: warning: incompatible implicit declaration of built-in function 'exit' [-Wbuiltin-declaration-mismatch]
+  761 |     exit(1);
+      |     ^~~~
+FmFw.c:761:5: note: include '<stdlib.h>' or provide a declaration of 'exit'
+FmFw.c: In function 'createFileIcons':
+FmFw.c:800:2: warning: missing sentinel in function call [-Wformat=]
+  800 |  XtVaGetValues(fw->icon_box,XtNnHoriz,&nhoriz,0);
+      |  ^~~~~~~~~~~~~
+TextField.c: At top level:
+TextField.c:2302:13: error: conflicting types for 'TfwExpose'; have 'void(struct _WidgetRec *, XEvent *, struct _XRegion *)'
+ 2302 | static void TfwExpose
+      |             ^~~~~~~~~
+TextField.c:636:13: note: previous declaration of 'TfwExpose' with type 'void(void)'
+  636 | static void TfwExpose();
+      |             ^~~~~~~~~
+TextField.c: In function 'TfwExpose':
+TextField.c:2319:3: error: too few arguments to function '((struct _TextFieldClassRec *)((struct _WidgetRec *)tfw)->core.widget_class)->threeD_class.shadowdraw'; expected 5, have 4
+ 2319 |  (*((TextFieldWidgetClass)(XtClass((Widget)tfw)))->threeD_class.shadowdraw)(w,ev,reg,
+      |  ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from TextFieldP.h:66,
+                 from TextField.c:166:
+/usr/include/X11/Xaw3d/ThreeDP.h:57:12: note: declared here
+   57 |     void (*shadowdraw)(Widget, XEvent *, Region, XtRelief, Boolean);
+      |            ^~~~~~~~~~
+FmFw.c: In function 'createTreeDisplay':
+FmFw.c:1033:3: warning: missing sentinel in function call [-Wformat=]
+ 1033 |   XtVaGetValues(fw->icon_box,XtNchildren,&children,XtNnumChildren,&num_children,0);
+      |   ^~~~~~~~~~~~~
+FmFw.c:1036:5: warning: missing sentinel in function call [-Wformat=]
+ 1036 |     XtVaSetValues(fw->viewport,XtNforceBars,False,0);
+      |     ^~~~~~~~~~~~~
+TextField.c: At top level:
+TextField.c:2438:13: error: conflicting types for 'Initialize'; have 'void(struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, Cardinal *)' {aka 'void(struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, unsigned int *)'}
+ 2438 | static void Initialize
+      |             ^~~~~~~~~~
+TextField.c:634:13: note: previous declaration of 'Initialize' with type 'void(void)'
+  634 | static void Initialize();
+      |             ^~~~~~~~~~
+TextField.c:2586:13: error: conflicting types for 'Destroy'; have 'void(struct _WidgetRec *)'
+ 2586 | static void Destroy
+      |             ^~~~~~~
+TextField.c:635:13: note: previous declaration of 'Destroy' with type 'void(void)'
+  635 | static void Destroy();
+      |             ^~~~~~~
+FmFw.c: In function 'updateFileDisplay':
+FmFw.c:1352:7: warning: missing sentinel in function call [-Wformat=]
+ 1352 |       XtVaGetValues(fw->icon_box,XtNx,&x,XtNy,&y,0);
+      |       ^~~~~~~~~~~~~
+TextField.c:2617:13: error: conflicting types for 'Resize'; have 'void(struct _WidgetRec *)'
+ 2617 | static void Resize
+      |             ^~~~~~
+TextField.c:637:13: note: previous declaration of 'Resize' with type 'void(void)'
+  637 | static void Resize();
+      |             ^~~~~~
+TextField.c:2643:16: error: conflicting types for 'SetValues'; have 'Boolean(struct _WidgetRec *, struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, Cardinal *)' {aka 'char(struct _WidgetRec *, struct _WidgetRec *, struct _WidgetRec *, struct <anonymous> *, unsigned int *)'}
+ 2643 | static Boolean SetValues
+      |                ^~~~~~~~~
+TextField.c:638:16: note: previous declaration of 'SetValues' with type 'Boolean(void)' {aka 'char(void)'}
+  638 | static Boolean SetValues();
+      |                ^~~~~~~~~
+TextField.c:2951:25: error: conflicting types for 'QueryGeometry'; have 'XtGeometryResult(struct _WidgetRec *, XtWidgetGeometry *, XtWidgetGeometry *)'
+ 2951 | static XtGeometryResult QueryGeometry
+      |                         ^~~~~~~~~~~~~
+TextField.c:639:25: note: previous declaration of 'QueryGeometry' with type 'XtGeometryResult(void)'
+  639 | static XtGeometryResult QueryGeometry();
+      |                         ^~~~~~~~~~~~~
+TextField.c:2986:16: error: conflicting types for 'AcceptFocus'; have 'Boolean(struct _WidgetRec *, Time)' {aka 'char(struct _WidgetRec *, long unsigned int)'}
+ 2986 | static Boolean AcceptFocus
+      |                ^~~~~~~~~~~
+TextField.c:640:16: note: previous declaration of 'AcceptFocus' with type 'Boolean(void)' {aka 'char(void)'}
+  640 | static Boolean AcceptFocus();
+      |                ^~~~~~~~~~~
+TextField.c: In function 'CvtByFormat':
+TextField.c:3117:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ 3117 |  fromString=(Boolean)(unsigned)(*(XtPointer*)args[1].addr);
+      |                      ^
+TextField.c: In function 'Restore':
+TextField.c:3440:17: warning: missing sentinel in function call [-Wformat=]
+ 3440 |                 XtVaSetValues(w,XtNstring,TF.buffer,0);
+      |                 ^~~~~~~~~~~~~
+TextField.c:3442:17: warning: missing sentinel in function call [-Wformat=]
+ 3442 |                 XtVaSetValues(w,XtNstring,TF.backup,0);
+      |                 ^~~~~~~~~~~~~
+TextField.c: At top level:
+TextField.c:634:13: warning: 'Initialize' used but never defined
+  634 | static void Initialize();
+      |             ^~~~~~~~~~
+TextField.c:635:13: warning: 'Destroy' used but never defined
+  635 | static void Destroy();
+      |             ^~~~~~~
+TextField.c:636:13: warning: 'TfwExpose' used but never defined
+  636 | static void TfwExpose();
+      |             ^~~~~~~~~
+TextField.c:637:13: warning: 'Resize' used but never defined
+  637 | static void Resize();
+      |             ^~~~~~
+TextField.c:638:16: warning: 'SetValues' used but never defined
+  638 | static Boolean SetValues();
+      |                ^~~~~~~~~
+TextField.c:639:25: warning: 'QueryGeometry' used but never defined
+  639 | static XtGeometryResult QueryGeometry();
+      |                         ^~~~~~~~~~~~~
+TextField.c:640:16: warning: 'AcceptFocus' used but never defined
+  640 | static Boolean AcceptFocus();
+      |                ^~~~~~~~~~~
+make[1]: *** [<builtin>: FmFw.o] Error 1
+TextField.c:2986:16: warning: 'AcceptFocus' defined but not used [-Wunused-function]
+ 2986 | static Boolean AcceptFocus
+      |                ^~~~~~~~~~~
+TextField.c:2951:25: warning: 'QueryGeometry' defined but not used [-Wunused-function]
+ 2951 | static XtGeometryResult QueryGeometry
+      |                         ^~~~~~~~~~~~~
+TextField.c:2643:16: warning: 'SetValues' defined but not used [-Wunused-function]
+ 2643 | static Boolean SetValues
+      |                ^~~~~~~~~
+TextField.c:2617:13: warning: 'Resize' defined but not used [-Wunused-function]
+ 2617 | static void Resize
+      |             ^~~~~~
+TextField.c:2586:13: warning: 'Destroy' defined but not used [-Wunused-function]
+ 2586 | static void Destroy
+      |             ^~~~~~~
+TextField.c:2438:13: warning: 'Initialize' defined but not used [-Wunused-function]
+ 2438 | static void Initialize
+      |             ^~~~~~~~~~
+TextField.c:2302:13: warning: 'TfwExpose' defined but not used [-Wunused-function]
+ 2302 | static void TfwExpose
+      |             ^~~~~~~~~
+make[1]: *** [<builtin>: TextField.o] Error 1
+make[1]: Leaving directory '/home/*******/Downloads/xfm-1.4.3-noregexp/src'
+make: *** [Makefile:1077: all] Error 2
