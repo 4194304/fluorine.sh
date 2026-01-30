@@ -18,3 +18,56 @@ h1 {
 .youcantreadthis {
     color:black;
 }
+
+/* For color experiment */
+.fb1 {
+    display:flex;
+}
+#by1 {
+    color:#03b2fd;
+    background-color:#ff8801;
+}
+#by2 {
+    background-color:#03b2fd;
+    color:#ff8801;
+}
+#rg1 {
+color:#d20000;
+background-color:#357600;
+}
+#rg2 {
+background-color:#d20000;
+color:#357600;
+}
+#rb1 {
+color:#fe0808;
+background-color:#007bfe;
+}
+#rb2 {
+background-color:#fe0808;
+color:#007bfe;
+}
+#mg1 {
+color:#fe00fe;
+background-color:#56a230;
+}
+#mg2 {
+background-color:#fe00fe;
+color:#56a230;
+}
+#bm1 {
+color:#9b2958;
+background-color:#4e13ff;
+}
+#bm2 {
+background-color:#9b2958;
+color:#4e13ff;
+}
+#mb1 {
+color:#0058ff;
+background-color:#d1005a;
+}
+#mb2 {
+background-color:#0058ff;
+color:#d1005a;
+}
