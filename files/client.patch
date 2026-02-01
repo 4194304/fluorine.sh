@@ -1,0 +1,559 @@
+--- com/mojang/minecraft/level/levelgen/synth/ImprovedNoise.java
++++ com/mojang/minecraft/level/levelgen/synth/ImprovedNoise.java
+@@ -11,8 +11,6 @@
+ 
+ 	public ImprovedNoise(Random var1) {
+ 		this.p = new int[512];
+-		System.out.println("New improvednoise!");
+-
+ 		int var2;
+ 		for(var2 = 0; var2 < 256; this.p[var2] = var2++) {
+ 		}
+--- com/mojang/minecraft/gui/PauseScreen.java
++++ com/mojang/minecraft/gui/PauseScreen.java
+@@ -3,10 +3,12 @@
+ public final class PauseScreen extends Screen {
+ 	public final void init() {
+ 		this.buttons.clear();
+-		this.buttons.add(new Button(0, this.width / 2 - 100, this.height / 3, 200, 20, "Generate new level..."));
+-		this.buttons.add(new Button(1, this.width / 2 - 100, this.height / 3 + 32, 200, 20, "Save level.."));
+-		this.buttons.add(new Button(2, this.width / 2 - 100, this.height / 3 + 64, 200, 20, "Load level.."));
+-		this.buttons.add(new Button(3, this.width / 2 - 100, this.height / 3 + 96, 200, 20, "Back to game"));
++		this.buttons.add(new Button(0, this.width / 2 - 100, this.height / 3 - 24, 200, 20, "Generate new level..."));
++		this.buttons.add(new Button(1, this.width / 2 - 100, this.height / 3 + 6, 200, 20, "Save level.."));
++		this.buttons.add(new Button(2, this.width / 2 - 100, this.height / 3 + 36, 200, 20, "Load level.."));
++		this.buttons.add(new Button(3, this.width / 2 - 100, this.height / 3 + 66, 200, 20, "Options"));
++		this.buttons.add(new Button(4, this.width / 2 - 100, this.height / 3 + 96, 200, 20, "Back to game"));
++		this.buttons.add(new Button(5, this.width / 2 + 135, this.height / 3 + 140, 75, 15, "Quit game"));
+ 		if(this.minecraft.user == null) {
+ 			((Button)this.buttons.get(1)).enabled = false;
+ 			((Button)this.buttons.get(2)).enabled = false;
+@@ -27,13 +29,21 @@
+ 			if(var1.id == 2) {
+ 				this.minecraft.setScreen(new LoadLevelScreen(this));
+ 			}
++
+ 		}
+ 
+ 		if(var1.id == 3) {
++			this.minecraft.setScreen(new OptionsScreen(this));
++		}
++
++		if(var1.id == 4) {
+ 			this.minecraft.setScreen((Screen)null);
+ 			this.minecraft.grabMouse();
+ 		}
+ 
++		if(var1.id == 5) {
++				System.exit(0);
++		}
+ 	}
+ 
+ 	public final void render(int var1, int var2) {
+--- com/mojang/minecraft/level/tile/LiquidTile.java
++++ com/mojang/minecraft/level/tile/LiquidTile.java
+@@ -4,14 +4,29 @@
+ import com.mojang.minecraft.phys.AABB;
+ import com.mojang.minecraft.renderer.Tesselator;
+ import java.util.Random;
++import java.io.BufferedReader;
++import java.io.FileReader;
++import java.io.IOException;
++import com.mojang.minecraft.level.tile.CalmLiquidTile;
+ 
+ public class LiquidTile extends Tile {
+ 	protected int liquidType;
+ 	protected int calmTileId;
+ 	protected int tileId;
+ 
++	public static int var1024 = 0;
++
+ 	protected LiquidTile(int var1, int var2) {
+ 		super(var1);
++		try (BufferedReader br = new BufferedReader(new FileReader("options.txt"))) {
++            String line1 = br.readLine();
++
++            if ("1".equals(line1)) {
++                var1024 = 1;
++            }
++        } catch (IOException e) {
++            e.printStackTrace();
++        }
+ 		this.liquidType = var2;
+ 		this.tex = 14;
+ 		if(var2 == 2) {
+@@ -21,6 +36,13 @@
+ 		this.tileId = var1;
+ 		this.calmTileId = var1 + 1;
+ 		float var3 = 0.1F;
++
++		if(var1024 == 1) {
++			var3 = 0.0F;
++		} else {
++			var3 = 0.1F;
++		}
++
+ 		this.setShape(0.0F, 0.0F - var3, 0.0F, 1.0F, 1.0F - var3, 1.0F);
+ 		this.setTicking(true);
+ 	}
+@@ -69,6 +91,9 @@
+ 
+ 	private boolean checkWater(Level var1, int var2, int var3, int var4) {
+ 		int var5 = var1.getTile(var2, var3, var4);
++		if(CalmLiquidTile.var7 == 0) {
++			var5 = 1;
++		}
+ 		if(var5 == 0) {
+ 			boolean var6 = var1.setTile(var2, var3, var4, this.tileId);
+ 			if(var6) {
+@@ -98,7 +123,7 @@
+ 	}
+ 
+ 	public final boolean mayPick() {
+-		return false;
++		return true;
+ 	}
+ 
+ 	public final AABB getAABB(int var1, int var2, int var3) {
+--- com/mojang/minecraft/gui/Button.java
++++ com/mojang/minecraft/gui/Button.java
+@@ -14,8 +14,8 @@
+ 		this.id = var1;
+ 		this.x = var2;
+ 		this.y = var3;
+-		this.w = 200;
+-		this.h = 20;
++		this.w = var4;
++		this.h = var5;
+ 		this.msg = var6;
+ 	}
+ }
+--- com/mojang/minecraft/level/levelgen/LevelGen.java
++++ com/mojang/minecraft/level/levelgen/LevelGen.java
+@@ -5,6 +5,9 @@
+ import com.mojang.minecraft.level.levelgen.synth.Distort;
+ import com.mojang.minecraft.level.levelgen.synth.PerlinNoise;
+ import com.mojang.minecraft.level.tile.Tile;
++import java.io.BufferedReader;
++import java.io.FileReader;
++import java.io.IOException;
+ import java.util.ArrayList;
+ import java.util.Random;
+ 
+@@ -256,6 +259,20 @@
+ 	private void plantTrees(int[] var1) {
+ 		int var2 = this.width;
+ 		int var3 = this.width * this.height / 4000;
++		int var1025 = 0;
++		int var1026 = 1;
++		try (BufferedReader br = new BufferedReader(new FileReader("options.txt"))) {
++			br.readLine();
++			String line2 = br.readLine();
++
++			if ("1".equals(line2)) {
++				var1025 = 1;
++				var1026 = 0;
++			}
++		} catch (IOException e) {
++			e.printStackTrace();
++		}
++
+ 
+ 		for(int var4 = 0; var4 < var3; ++var4) {
+ 			this.setNextPhase(var4 * 100 / (var3 - 1));
+@@ -312,7 +329,7 @@
+ 
+ 										for(var18 = var9 - 1; var18 <= var9 + 1; ++var18) {
+ 											int var19 = var18 - var9;
+-											if(var17 != 0 || Math.abs(var21) != 1 || Math.abs(var19) != 1) {
++											if(var17 != var1025 || Math.abs(var21) != var1026 || Math.abs(var19) != var1026) {
+ 												this.blocks[(var16 * this.height + var18) * this.width + var20] = (byte)Tile.leaf.id;
+ 											}
+ 										}
+--- /dev/null
++++ com/mojang/minecraft/gui/OptionsScreen.java
+@@ -1,0 +1,182 @@
++package com.mojang.minecraft.gui;
++import com.mojang.minecraft.level.tile.CalmLiquidTile;
++import com.mojang.minecraft.level.tile.LiquidTile;
++import java.io.File;
++import java.io.IOException;
++import java.io.BufferedWriter;
++import java.io.BufferedReader;
++import java.io.FileWriter;
++import java.io.FileReader;
++import java.util.ArrayList;
++import java.util.List;
++
++public final class OptionsScreen extends Screen {
++	private Screen parent;
++
++	public OptionsScreen(Screen var1) {
++		this.parent = var1;
++	}
++
++
++	public final void init() {
++		this.buttons.clear();
++		this.buttons.add(new Button(0, this.width / 2 - 100, this.height / 3 - 15, 98, 20, "Enable"));
++		this.buttons.add(new Button(1, this.width / 2 + 2, this.height / 3 - 15, 98, 20, "Disable"));
++		this.buttons.add(new Button(2, this.width / 2 - 100, this.height / 3 + 30, 98, 20, "Enable"));
++		this.buttons.add(new Button(3, this.width / 2 + 2, this.height / 3 + 30, 98, 20, "Disable"));
++		this.buttons.add(new Button(4, this.width / 2 - 100, this.height / 3 + 75, 98, 20, "Enable"));
++		this.buttons.add(new Button(5, this.width / 2 + 2, this.height / 3 + 75, 98, 20, "Disable"));
++		this.buttons.add(new Button(6, this.width / 2 - 100, this.height / 3 + 120, 200, 20, "Cancel"));
++	}
++
++	protected final void buttonClicked(Button var1) {
++		if(var1.id == 0) {
++            CalmLiquidTile.var7 = 1;
++            try {
++				File f = new File("options.txt"), t = new File("options.txt.tmp");
++				BufferedReader r = new BufferedReader(new FileReader(f));
++				BufferedWriter w = new BufferedWriter(new FileWriter(t));
++				String l; int i = 1;
++				while ((l = r.readLine()) != null) {
++					w.write(i++ == 3 ? "1" : l);
++					w.newLine();
++				}
++				r.close(); w.close();
++				f.delete(); t.renameTo(f);
++			} catch (Exception ignored) {}
++			this.minecraft.setScreen(this.parent);
++			this.minecraft.setScreen((Screen)null);
++			this.minecraft.grabMouse();
++			this.minecraft.setScreen(this.parent);
++			this.minecraft.setScreen((Screen)null);
++			this.minecraft.grabMouse();
++		} if(var1.id == 1) {
++			try {
++				File f = new File("options.txt"), t = new File("options.txt.tmp");
++				BufferedReader r = new BufferedReader(new FileReader(f));
++				BufferedWriter w = new BufferedWriter(new FileWriter(t));
++				String l; int i = 1;
++				while ((l = r.readLine()) != null) {
++					w.write(i++ == 3 ? "0" : l);
++					w.newLine();
++				}
++				r.close(); w.close();
++				f.delete(); t.renameTo(f);
++			} catch (Exception ignored) {}
++			this.minecraft.setScreen(this.parent);
++			this.minecraft.setScreen((Screen)null);
++			this.minecraft.grabMouse();
++            CalmLiquidTile.var7 = 0;
++			this.minecraft.setScreen(this.parent);
++			this.minecraft.setScreen((Screen)null);
++			this.minecraft.grabMouse();
++		} if(var1.id == 2) {
++            try {
++				File f = new File("options.txt"), t = new File("options.txt.tmp");
++				BufferedReader r = new BufferedReader(new FileReader(f));
++				BufferedWriter w = new BufferedWriter(new FileWriter(t));
++				String l; int i = 1;
++				while ((l = r.readLine()) != null) {
++					w.write(i++ == 1 ? "1" : l);
++					w.newLine();
++				}
++				r.close(); w.close();
++				f.delete(); t.renameTo(f);
++			} catch (Exception ignored) {}
++			this.minecraft.setScreen(this.parent);
++			this.minecraft.setScreen((Screen)null);
++			this.minecraft.grabMouse();
++		} if(var1.id == 3) {
++            try {
++				File f = new File("options.txt"), t = new File("options.txt.tmp");
++				BufferedReader r = new BufferedReader(new FileReader(f));
++				BufferedWriter w = new BufferedWriter(new FileWriter(t));
++				String l; int i = 1;
++				while ((l = r.readLine()) != null) {
++					w.write(i++ == 1 ? "0" : l);
++					w.newLine();
++				}
++				r.close(); w.close();
++				f.delete(); t.renameTo(f);
++			} catch (Exception ignored) {}
++			this.minecraft.setScreen(this.parent);
++			this.minecraft.setScreen((Screen)null);
++			this.minecraft.grabMouse();
++		} if(var1.id == 4) {
++            try {
++				File f = new File("options.txt"), t = new File("options.txt.tmp");
++				BufferedReader r = new BufferedReader(new FileReader(f));
++				BufferedWriter w = new BufferedWriter(new FileWriter(t));
++				String l; int i = 1;
++				while ((l = r.readLine()) != null) {
++					w.write(i++ == 2 ? "1" : l);
++					w.newLine();
++				}
++				r.close(); w.close();
++				f.delete(); t.renameTo(f);
++			} catch (Exception ignored) {}
++			this.minecraft.setScreen(this.parent);
++			this.minecraft.setScreen((Screen)null);
++			this.minecraft.grabMouse();
++		} if(var1.id == 5) {
++            try {
++				File f = new File("options.txt"), t = new File("options.txt.tmp");
++				BufferedReader r = new BufferedReader(new FileReader(f));
++				BufferedWriter w = new BufferedWriter(new FileWriter(t));
++				String l; int i = 1;
++				while ((l = r.readLine()) != null) {
++					w.write(i++ == 2 ? "0" : l);
++					w.newLine();
++				}
++				r.close(); w.close();
++				f.delete(); t.renameTo(f);
++			} catch (Exception ignored) {}
++			this.minecraft.setScreen(this.parent);
++			this.minecraft.setScreen((Screen)null);
++			this.minecraft.grabMouse();
++		} else {
++			this.minecraft.setScreen((Screen)null);
++			this.minecraft.grabMouse();
++		}
++	}
++
++	public final void render(int var1, int var2) {
++		File file = new File("options.txt");
++
++		boolean needsInit = false;
++		List<String> lines = new ArrayList<>();
++
++		if (!file.exists()) {
++			needsInit = true;
++		} else {
++			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
++				String line;
++				while ((line = br.readLine()) != null) {
++					lines.add(line);
++				}
++				if (lines.size() < 6) {
++					needsInit = true;
++				}
++			} catch (IOException e) {
++				needsInit = true; // corrupted or unreadable → recreate
++			}
++		}
++
++		if (needsInit) {
++			try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
++				for (int i = 0; i < 6; i++) {
++					bw.write("0");
++					bw.newLine();
++				}
++			} catch (IOException e) {
++				e.printStackTrace();
++			}
++		}
++		fillGradient(0, 0, this.width, this.height, 1610941696, -1607454624);
++		this.drawCenteredString("Options", this.width / 2, 25, 16777215);
++		this.drawCenteredString("Liquid ticking", this.width / 2, 50, 16777215);
++		this.drawCenteredString("Full block liquids", this.width / 2, 95, 16777215);
++		this.drawCenteredString("Old trees", this.width / 2, 140, 16777215);
++		super.render(var1, var2);
++	}
++}
+--- com/mojang/minecraft/level/tile/CalmLiquidTile.java
++++ com/mojang/minecraft/level/tile/CalmLiquidTile.java
+@@ -1,14 +1,32 @@
+ package com.mojang.minecraft.level.tile;
+ 
++import org.lwjgl.input.Keyboard;
+ import com.mojang.minecraft.level.Level;
+ import java.util.Random;
++import java.io.BufferedReader;
++import java.io.FileReader;
++import java.io.IOException;
+ 
+ public final class CalmLiquidTile extends LiquidTile {
++
++	public static int var7 = 0;
++
+ 	protected CalmLiquidTile(int var1, int var2) {
+ 		super(var1, var2);
+ 		this.tileId = var1 - 1;
+ 		this.calmTileId = var1;
+ 		this.setTicking(false);
++		try (BufferedReader br = new BufferedReader(new FileReader("options.txt"))) {
++			br.readLine();
++			br.readLine();
++			String line3 = br.readLine();
++
++			if ("1".equals(line3)) {
++				var7 = 1;
++			}
++		} catch (IOException e) {
++			e.printStackTrace();
++		}
+ 	}
+ 
+ 	public final void tick(Level var1, int var2, int var3, int var4, Random var5) {
+@@ -16,24 +34,43 @@
+ 
+ 	public final void neighborChanged(Level var1, int var2, int var3, int var4, int var5) {
+ 		boolean var6 = false;
++
+ 		if(var1.getTile(var2 - 1, var3, var4) == 0) {
+ 			var6 = true;
+ 		}
++		if (var7 == 0) {
++			var6 = false;
++		}
+ 
+ 		if(var1.getTile(var2 + 1, var3, var4) == 0) {
+ 			var6 = true;
+ 		}
++		if (var7 == 0) {
++			var6 = false;
++		}
+ 
+ 		if(var1.getTile(var2, var3, var4 - 1) == 0) {
+ 			var6 = true;
+ 		}
++		if (var7 == 0) {
++			var6 = false;
++		}
+ 
+ 		if(var1.getTile(var2, var3, var4 + 1) == 0) {
+ 			var6 = true;
+ 		}
++		if (var7 == 0) {
++			var6 = false;
++		}
++		if (var7 == 0) {
++			var6 = false;
++		}
+ 
+ 		if(var1.getTile(var2, var3 - 1, var4) == 0) {
+ 			var6 = true;
++		}
++		if (var7 == 0) {
++			var6 = false;
+ 		}
+ 
+ 		if(this.liquidType == 1 && var5 == Tile.lava.id) {
+--- com/mojang/minecraft/level/tile/GrassTile.java
++++ com/mojang/minecraft/level/tile/GrassTile.java
+@@ -17,14 +17,14 @@
+ 	public final void tick(Level var1, int var2, int var3, int var4, Random var5) {
+ 		if(var5.nextInt(4) == 0) {
+ 			if(!var1.isLit(var2, var3 + 1, var4)) {
+-				var1.setTile(var2, var3, var4, Tile.dirt.id);
++				var1.setTileNoUpdate(var2, var3, var4, Tile.dirt.id);
+ 			} else {
+ 				for(int var9 = 0; var9 < 4; ++var9) {
+ 					int var6 = var2 + var5.nextInt(3) - 1;
+ 					int var7 = var3 + var5.nextInt(5) - 3;
+ 					int var8 = var4 + var5.nextInt(3) - 1;
+ 					if(var1.getTile(var6, var7, var8) == Tile.dirt.id && var1.isLit(var6, var7 + 1, var8)) {
+-						var1.setTile(var6, var7, var8, Tile.grass.id);
++						var1.setTileNoUpdate(var6, var7, var8, Tile.grass.id);
+ 					}
+ 				}
+ 
+--- com/mojang/minecraft/Entity.java
++++ com/mojang/minecraft/Entity.java
+@@ -138,7 +138,7 @@
+ 
+ 		this.bb.move(0.0F, 0.0F, var3);
+ 		this.horizontalCollision = var4 != var1 || var6 != var3;
+-		this.onGround = var5 != var2 && var5 < 0.0F;
++		this.onGround = var5 < 0.0F;
+ 		if(var4 != var1) {
+ 			this.xd = 0.0F;
+ 		}
+--- com/mojang/minecraft/Minecraft.java
++++ com/mojang/minecraft/Minecraft.java
+@@ -19,6 +19,8 @@
+ import com.mojang.minecraft.renderer.LevelRenderer;
+ import com.mojang.minecraft.renderer.Tesselator;
+ import com.mojang.minecraft.renderer.Textures;
++import com.mojang.minecraft.level.tile.CalmLiquidTile;
++import com.mojang.minecraft.level.tile.LiquidTile;
+ import java.awt.AWTException;
+ import java.awt.Canvas;
+ import java.awt.Component;
+@@ -28,6 +30,10 @@
+ import java.io.File;
+ import java.io.FileInputStream;
+ import java.io.FileOutputStream;
++import java.io.BufferedReader;
++import java.io.FileReader;
++import java.io.FileNotFoundException;
++import java.io.IOException;
+ import java.nio.FloatBuffer;
+ import java.nio.IntBuffer;
+ import java.util.Iterator;
+@@ -73,7 +79,7 @@
+ 	public String loadMapUser = null;
+ 	public int loadMapID = 0;
+ 	private Robot robot;
+-	private static final int[] creativeTiles = new int[]{Tile.rock.id, Tile.dirt.id, Tile.stoneBrick.id, Tile.wood.id, Tile.bush.id, Tile.log.id, Tile.leaf.id, Tile.sand.id, Tile.gravel.id};
++	private static final int[] creativeTiles = new int[]{Tile.rock.id, Tile.dirt.id, Tile.stoneBrick.id, Tile.wood.id, Tile.bush.id, Tile.log.id, Tile.leaf.id, Tile.sand.id, Tile.gravel.id, Tile.oreGold.id, Tile.oreIron.id, Tile.oreCoal.id, Tile.unbreakable.id, Tile.calmWater.id, Tile.calmLava.id, Tile.grass.id};
+ 	private float fogColorRed = 0.5F;
+ 	private float fogColorGreen = 0.8F;
+ 	private float fogColorBlue = 1.0F;
+@@ -211,6 +217,7 @@
+ 			GL11.glViewport(0, 0, this.width, this.height);
+ 			boolean var9 = false;
+ 
++
+ 			try {
+ 				if(var4.loadMapUser != null) {
+ 					var9 = var4.loadLevel(var4.loadMapUser, var4.loadMapID);
+@@ -505,6 +512,42 @@
+ 							this.yMouseAxis = -this.yMouseAxis;
+ 						}
+ 
++						if(Keyboard.getEventKey() == Keyboard.KEY_0) {
++							this.paintTexture = creativeTiles[9];
++						}
++
++						if(Keyboard.getEventKey() == Keyboard.KEY_MINUS) {
++							this.paintTexture = creativeTiles[10];
++						}
++
++						if(Keyboard.getEventKey() == Keyboard.KEY_EQUALS) {
++							this.paintTexture = creativeTiles[11];
++						}
++
++						if(Keyboard.getEventKey() == Keyboard.KEY_APOSTROPHE) {
++							this.paintTexture = creativeTiles[12];
++						}
++
++						if(Keyboard.getEventKey() == Keyboard.KEY_LBRACKET) {
++							this.paintTexture = creativeTiles[13];
++						}
++
++						if(Keyboard.getEventKey() == Keyboard.KEY_RBRACKET) {
++							this.paintTexture = creativeTiles[14];
++						}
++
++						if(Keyboard.getEventKey() == Keyboard.KEY_GRAVE) {
++							this.paintTexture = creativeTiles[15];
++						}
++
++						if(Keyboard.getEventKey() == Keyboard.KEY_P) {
++							CalmLiquidTile.var7 = 0;
++						}
++
++						if(Keyboard.getEventKey() == Keyboard.KEY_O) {
++							CalmLiquidTile.var7 = 1;
++						}
++
+ 						if(Keyboard.getEventKey() == Keyboard.KEY_G && this.level.entities.size() < 256) {
+ 							this.level.entities.add(new Zombie(this.level, this.player.x, this.player.y, this.player.z));
+ 						}
+@@ -694,8 +737,8 @@
+ 
+ 		var17.hitResult = var27;
+ 		checkGlError("Picked");
+-		this.fogColorRed = 0.92F;
+-		this.fogColorGreen = 0.98F;
++		this.fogColorRed = 0.5F;
++		this.fogColorGreen = 0.8F;
+ 		this.fogColorBlue = 1.0F;
+ 		GL11.glClearColor(this.fogColorRed, this.fogColorGreen, this.fogColorBlue, 0.0F);
+ 		GL11.glClear(GL11.GL_DEPTH_BUFFER_BIT | GL11.GL_COLOR_BUFFER_BIT);
